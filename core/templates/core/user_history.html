@@ -166,7 +166,13 @@
                             {% if activity.prompt_used %}
                             <div class="prompt-details">
                                 <h6>AI Prompt Used:</h6>
-                                <div class="prompt-text">{{ activity.prompt_used|truncatewords:50 }}</div>
+                                <div class="prompt-text" id="prompt-{{ activity.id }}">
+                                    <div class="prompt-preview">{{ activity.prompt_used|truncatewords:30 }}</div>
+                                    <div class="prompt-full" style="display: none;">{{ activity.prompt_used }}</div>
+                                </div>
+                                <button onclick="togglePrompt({{ activity.id }})" class="btn btn-sm btn-link prompt-toggle" id="toggle-{{ activity.id }}">
+                                    <i class="bi bi-chevron-down me-1"></i>Show More
+                                </button>
                             </div>
                             {% endif %}
                         </div>
@@ -405,9 +411,32 @@
         background: var(--bg-light);
         padding: 1rem;
         border-radius: 0.5rem;
-        font-family: monospace;
+        font-family: 'Courier New', monospace;
         font-size: 0.9rem;
         color: var(--text-gray);
+        white-space: pre-wrap;
+        word-wrap: break-word;
+        line-height: 1.6;
+        max-height: none;
+    }
+    
+    .prompt-preview {
+        display: block;
+    }
+    
+    .prompt-full {
+        display: none;
+    }
+    
+    .prompt-toggle {
+        padding: 0.25rem 0.5rem;
+        font-size: 0.875rem;
+        text-decoration: none;
+        margin-top: 0.5rem;
+    }
+    
+    .prompt-toggle:hover {
+        text-decoration: underline;
     }
     
     .empty-state {
@@ -481,6 +510,25 @@
 </style>
 
 <script>
+function togglePrompt(activityId) {
+    const promptDiv = document.getElementById(`prompt-${activityId}`);
+    const toggleBtn = document.getElementById(`toggle-${activityId}`);
+    const preview = promptDiv.querySelector('.prompt-preview');
+    const full = promptDiv.querySelector('.prompt-full');
+    
+    if (full.style.display === 'none') {
+        // Show full prompt
+        preview.style.display = 'none';
+        full.style.display = 'block';
+        toggleBtn.innerHTML = '<i class="bi bi-chevron-up me-1"></i>Show Less';
+    } else {
+        // Show preview
+        preview.style.display = 'block';
+        full.style.display = 'none';
+        toggleBtn.innerHTML = '<i class="bi bi-chevron-down me-1"></i>Show More';
+    }
+}
+
 function copyToClipboard(text) {
     navigator.clipboard.writeText(text).then(function() {
         // Show success message

@@ -144,11 +144,86 @@ function appendMessage(text, sender) {
     }, 100);
 }
 
+// Load existing conversation from floating widget
+function loadChatHistory() {
+    const history = sessionStorage.getItem('chatHistory');
+    if (history) {
+        const messages = JSON.parse(history);
+        messages.forEach(msg => {
+            appendMessage(msg.text, msg.sender);
+        });
+    }
+}
+
+// Load history on page load
+loadChatHistory();
+
+function saveChatHistory(text, sender) {
+    let history = sessionStorage.getItem('chatHistory');
+    history = history ? JSON.parse(history) : [];
+    history.push({ text, sender });
+    sessionStorage.setItem('chatHistory', JSON.stringify(history));
+}
+
+// Function to extract page content from the page that opened chatbot
+function extractPageContent() {
+    // Since user might have come from another page, try to get content from opener or current page
+    if (window.opener && !window.opener.closed) {
+        try {
+            let content = [];
+            const doc = window.opener.document;
+            
+            // Get form fields
+            doc.querySelectorAll('input, textarea, select').forEach(field => {
+                if (field.type !== 'hidden') {
+                    let label = '';
+                    if (field.id) {
+                        const labelEl = doc.querySelector(`label[for="${field.id}"]`);
+                        if (labelEl) label = labelEl.textContent.trim();
+                    }
+                    if (!label && field.placeholder) label = field.placeholder;
+                    if (!label && field.name) label = field.name;
+                    
+                    let info = `- ${label || 'Input field'}`;
+                    if (field.tagName === 'SELECT') {
+                        const options = Array.from(field.options).map(o => o.text).filter(t => t).join(', ');
+                        if (options) info += ` (options: ${options})`;
+                    } else if (field.type) {
+                        info += ` (${field.type})`;
+                    }
+                    content.push(info);
+                }
+            });
+            
+            // Get buttons
+            doc.querySelectorAll('main button, .container button, .card button').forEach(btn => {
+                const text = btn.textContent.trim();
+                if (text && text.length < 50) {
+                    content.push(`- Button: "${text}"`);
+                }
+            });
+            
+            // Get page heading
+            const mainHeading = doc.querySelector('main h1, main h2, .container h1, .container h2');
+            if (mainHeading) {
+                content.unshift(`Page Title: ${mainHeading.textContent.trim()}`);
+            }
+            
+            return content.join('\n');
+        } catch (e) {
+            // Cross-origin or other error, return empty
+            return '';
+        }
+    }
+    return '';
+}
+
 chatForm.addEventListener('submit', function(e) {
     e.preventDefault();
     const userMsg = chatInput.value.trim();
     if (!userMsg) return;
     appendMessage(userMsg, 'user');
+    saveChatHistory(userMsg, 'user');
     chatInput.value = '';
     chatError.style.display = 'none';
     chatLoading.style.display = 'block';
@@ -160,13 +235,18 @@ chatForm.addEventListener('submit', function(e) {
             'Content-Type': 'application/x-www-form-urlencoded',
             'X-CSRFToken': document.querySelector('[name=csrfmiddlewaretoken]').value
         },
-        body: new URLSearchParams({ message: userMsg })
+        body: new URLSearchParams({ 
+            message: userMsg,
+            current_page: window.location.pathname,
+            page_content: extractPageContent()
+        })
     })
     .then(response => response.json())
     .then(data => {
         chatLoading.style.display = 'none';
         if (data.success) {
             appendMessage(data.reply, 'bot');
+            saveChatHistory(data.reply, 'bot');
         } else {
             chatError.textContent = data.error || 'Something went wrong.';
             chatError.style.display = 'block';

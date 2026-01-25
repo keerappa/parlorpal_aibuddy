@@ -20,9 +20,14 @@
                             </p>
                         </div>
                         <div class="col-md-4 text-md-end">
-                            <a href="{% url 'dashboard' %}" class="btn btn-outline-primary">
-                                <i class="bi bi-arrow-left me-1"></i>Back to Dashboard
-                            </a>
+                            <div class="d-flex gap-2 justify-content-md-end justify-content-start">
+                                <a href="{% url 'user_history' %}" class="btn btn-outline-primary">
+                                    <i class="bi bi-clock-history me-1"></i>View History of Activities
+                                </a>
+                                <a href="{% url 'dashboard' %}" class="btn btn-outline-primary">
+                                    <i class="bi bi-arrow-left me-1"></i>Dashboard
+                                </a>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -285,19 +290,6 @@
                     </div>
                 </div>
                 {% endif %}
-                
-                <!-- View History Button -->
-                <div class="history-action-card">
-                    <div class="card-body text-center">
-                        <h6 class="mb-3">
-                            <i class="bi bi-clock-history me-2"></i>View Complete History
-                        </h6>
-                        <p class="text-muted mb-3">See all your poster generations, text creations, and logo uploads in one place</p>
-                        <a href="{% url 'user_history' %}" class="btn btn-primary w-100">
-                            <i class="bi bi-clock-history me-1"></i>View My History
-                        </a>
-                    </div>
-                </div>
             </div>
         </div>
     </div>

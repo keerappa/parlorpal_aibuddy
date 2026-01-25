@@ -168,13 +168,44 @@
             right: 2rem;
             z-index: 1051;
             width: 340px;
+            height: 450px;
             max-width: 95vw;
+            max-height: 80vh;
+            min-width: 280px;
+            min-height: 300px;
             background: #fff;
             border-radius: 1rem;
             box-shadow: 0 8px 32px rgba(60,60,120,0.18);
             display: none;
             flex-direction: column;
             overflow: hidden;
+            resize: both;
+        }
+        .chatbot-resize-handle {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 32px;
+            height: 32px;
+            cursor: nwse-resize;
+            z-index: 10;
+            background: rgba(124, 58, 237, 0.25);
+            border-bottom-right-radius: 0.5rem;
+            transition: background 0.2s;
+        }
+        .chatbot-resize-handle:hover {
+            background: rgba(124, 58, 237, 0.35);
+        }
+        .chatbot-resize-handle::after {
+            content: '';
+            position: absolute;
+            top: 6px;
+            left: 6px;
+            width: 16px;
+            height: 16px;
+            border-left: 3px solid #7c3aed;
+            border-top: 3px solid #7c3aed;
+            opacity: 1;
         }
         #floatingChatbotHeader {
             background: linear-gradient(135deg, #7c3aed, #818cf8);
@@ -194,8 +225,7 @@
         #floatingChatbotBody {
             background: #f8fafc;
             padding: 1rem;
-            min-height: 180px;
-            max-height: 260px;
+            flex: 1;
             overflow-y: auto;
             font-size: 0.98rem;
         }
@@ -238,7 +268,7 @@
     </button>
     <div id="floatingChatbotWindow">
         <div id="floatingChatbotHeader">
-            <span><i class="bi bi-robot me-1"></i>ParlorPal Assistant</span>
+            <span><i class=""></i> ____ParlorPal Assistant____</span>
             <div>
                 <button class="expand-btn" title="Open full chat" onclick="window.location.href='{% url 'chatbot' %}'"><i class="bi bi-arrows-fullscreen"></i></button>
                 <button class="expand-btn" title="Close" onclick="toggleFloatingChatbot(false)"><i class="bi bi-x-lg"></i></button>
@@ -256,12 +286,86 @@
             </div>
             <div id="floatingChatbotError" class="alert alert-danger mt-1 py-1 px-2" style="display:none;font-size:0.95em;"></div>
         </div>
+        <div class="chatbot-resize-handle"></div>
     </div>
     <script>
     function toggleFloatingChatbot(show) {
         const win = document.getElementById('floatingChatbotWindow');
+        if (show) {
+            // Restore saved size
+            const savedWidth = localStorage.getItem('chatbotWidth');
+            const savedHeight = localStorage.getItem('chatbotHeight');
+            if (savedWidth) win.style.width = savedWidth;
+            if (savedHeight) win.style.height = savedHeight;
+        }
         win.style.display = show ? 'flex' : 'none';
     }
+    
+    // Resize functionality
+    (function() {
+        const chatWindow = document.getElementById('floatingChatbotWindow');
+        const resizeHandle = chatWindow.querySelector('.chatbot-resize-handle');
+        let isResizing = false;
+        let startX, startY, startWidth, startHeight, startBottom, startRight;
+        
+        function startResize(e) {
+            isResizing = true;
+            startX = e.clientX || e.touches[0].clientX;
+            startY = e.clientY || e.touches[0].clientY;
+            startWidth = parseInt(getComputedStyle(chatWindow).width, 10);
+            startHeight = parseInt(getComputedStyle(chatWindow).height, 10);
+            
+            // Get current position
+            const rect = chatWindow.getBoundingClientRect();
+            startBottom = window.innerHeight - rect.bottom;
+            startRight = window.innerWidth - rect.right;
+            
+            e.preventDefault();
+        }
+        
+        function doResize(e) {
+            if (!isResizing) return;
+            const clientX = e.clientX || (e.touches && e.touches[0].clientX);
+            const clientY = e.clientY || (e.touches && e.touches[0].clientY);
+            
+            // Calculate delta (how much mouse moved)
+            const deltaX = startX - clientX; // Reversed for top-left
+            const deltaY = startY - clientY; // Reversed for top-left
+            
+            const newWidth = startWidth + deltaX;
+            const newHeight = startHeight + deltaY;
+            
+            // Apply constraints
+            if (newWidth >= 280 && newWidth <= window.innerWidth * 0.95) {
+                chatWindow.style.width = newWidth + 'px';
+                chatWindow.style.right = startRight + 'px';
+            }
+            if (newHeight >= 300 && newHeight <= window.innerHeight * 0.8) {
+                chatWindow.style.height = newHeight + 'px';
+                chatWindow.style.bottom = startBottom + 'px';
+            }
+        }
+        
+        function stopResize() {
+            if (isResizing) {
+                isResizing = false;
+                // Save size preference
+                localStorage.setItem('chatbotWidth', chatWindow.style.width);
+                localStorage.setItem('chatbotHeight', chatWindow.style.height);
+            }
+        }
+        
+        // Mouse events
+        resizeHandle.addEventListener('mousedown', startResize);
+        document.addEventListener('mousemove', doResize);
+        document.addEventListener('mouseup', stopResize);
+        
+        // Touch events for mobile
+        resizeHandle.addEventListener('touchstart', startResize);
+        document.addEventListener('touchmove', doResize);
+        document.addEventListener('touchend', stopResize);
+    })();
+    
     document.getElementById('floatingChatbotBtn').onclick = function() {
         toggleFloatingChatbot(true);
         setTimeout(function() {
@@ -277,7 +381,26 @@
     const miniBody = document.getElementById('floatingChatbotBody');
     const miniLoading = document.getElementById('floatingChatbotLoading');
     const miniError = document.getElementById('floatingChatbotError');
-    function appendMiniMessage(text, sender) {
+    
+    // Load existing conversation from sessionStorage
+    function loadChatHistory() {
+        const history = sessionStorage.getItem('chatHistory');
+        if (history) {
+            const messages = JSON.parse(history);
+            messages.forEach(msg => {
+                appendMiniMessage(msg.text, msg.sender, false);
+            });
+        }
+    }
+    
+    function saveChatHistory(text, sender) {
+        let history = sessionStorage.getItem('chatHistory');
+        history = history ? JSON.parse(history) : [];
+        history.push({ text, sender });
+        sessionStorage.setItem('chatHistory', JSON.stringify(history));
+    }
+    
+    function appendMiniMessage(text, sender, save = true) {
         const row = document.createElement('div');
         row.className = 'mini-chat-row ' + sender;
         const bubble = document.createElement('div');
@@ -288,7 +411,58 @@
         setTimeout(function() {
             miniBody.scrollTop = miniBody.scrollHeight;
         }, 100);
+        
+        if (save) {
+            saveChatHistory(text, sender);
+        }
     }
+    
+    // Load chat history on widget open
+    loadChatHistory();
+    
+    // Function to extract page content (forms, inputs, buttons, etc.)
+    function extractPageContent() {
+        let content = [];
+        
+        // Get all form fields with labels
+        document.querySelectorAll('input, textarea, select').forEach(field => {
+            if (field.type !== 'hidden' && field.id !== 'floatingChatbotInput' && field.id !== 'chatInput') {
+                let label = '';
+                if (field.id) {
+                    const labelEl = document.querySelector(`label[for="${field.id}"]`);
+                    if (labelEl) label = labelEl.textContent.trim();
+                }
+                if (!label && field.placeholder) label = field.placeholder;
+                if (!label && field.name) label = field.name;
+                
+                let info = `- ${label || 'Input field'}`;
+                if (field.tagName === 'SELECT') {
+                    const options = Array.from(field.options).map(o => o.text).filter(t => t).join(', ');
+                    if (options) info += ` (options: ${options})`;
+                } else if (field.type) {
+                    info += ` (${field.type})`;
+                }
+                content.push(info);
+            }
+        });
+        
+        // Get main buttons (excluding nav/footer)
+        document.querySelectorAll('main button, .container button, .card button').forEach(btn => {
+            const text = btn.textContent.trim();
+            if (text && !text.includes('Toggle') && text.length < 50) {
+                content.push(`- Button: "${text}"`);
+            }
+        });
+        
+        // Get page heading
+        const mainHeading = document.querySelector('main h1, main h2, .container h1, .container h2');
+        if (mainHeading) {
+            content.unshift(`Page Title: ${mainHeading.textContent.trim()}`);
+        }
+        
+        return content.join('\n');
+    }
+    
     miniForm.onsubmit = function(e) {
         e.preventDefault();
         const userMsg = miniInput.value.trim();
@@ -305,7 +479,11 @@
                 'Content-Type': 'application/x-www-form-urlencoded',
                 'X-CSRFToken': document.querySelector('[name=csrfmiddlewaretoken]').value
             },
-            body: new URLSearchParams({ message: userMsg })
+            body: new URLSearchParams({ 
+                message: userMsg,
+                current_page: window.location.pathname,
+                page_content: extractPageContent()
+            })
         })
         .then(function(response) { return response.json(); })
         .then(function(data) {

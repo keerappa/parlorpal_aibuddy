@@ -67,50 +67,60 @@ import traceback
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 CREDENTIALS_PATH = os.path.join(BASE_DIR, 'secrets', 'image-gen-demo-epsilon-d9e1f100bfc8.json')
 
-# Global variable for model
-imagen_model_preview = None
-_vertexai_initialized = False
-
-def initialize_vertex_ai():
-    """Lazy initialization of Vertex AI - only called when needed"""
-    global imagen_model_preview, _vertexai_initialized
-    
-    if _vertexai_initialized:
-        return imagen_model_preview
-    
-    # Try to set credentials from environment variable first (for production)
-    google_creds_json = os.getenv('GOOGLE_CREDENTIALS_JSON')
-    if google_creds_json:
-        try:
-            credentials_file = '/tmp/google-credentials.json'
-            with open(credentials_file, 'w') as f:
-                f.write(google_creds_json)
-            os.environ['GOOGLE_APPLICATION_CREDENTIALS'] = credentials_file
-            print("SUCCESS: Using Google credentials from environment variable")
-        except Exception as e:
-            print(f"ERROR: Failed to write credentials from environment: {e}")
-            _vertexai_initialized = True
-            return None
-    elif os.path.exists(CREDENTIALS_PATH):
-        os.environ['GOOGLE_APPLICATION_CREDENTIALS'] = CREDENTIALS_PATH
-        print(f"SUCCESS: Using local credentials file")
-    else:
-        print(f"WARNING: No Google credentials found")
-        _vertexai_initialized = True
-        return None
-
+# Try to set credentials from environment variable first (for production)
+google_creds_json = os.getenv('GOOGLE_CREDENTIALS_JSON')
+if google_creds_json:
+    # Production: credentials provided as JSON string in environment variable
     try:
-        if os.getenv('GOOGLE_APPLICATION_CREDENTIALS'):
-            vertexai.init(project=os.getenv('GCP_PROJECT_ID'), location="us-central1")
-            Imagen_Model = "imagen-4.0-ultra-generate-preview-06-06"
-            imagen_model_preview = ImageGenerationModel.from_pretrained(Imagen_Model)
-            print(f"SUCCESS: Vertex AI initialized with {Imagen_Model}")
-        _vertexai_initialized = True
-        return imagen_model_preview
+        credentials_file = '/tmp/google-credentials.json'
+        with open(credentials_file, 'w') as f:
+            f.write(google_creds_json)
+        os.environ['GOOGLE_APPLICATION_CREDENTIALS'] = credentials_file
+        print("SUCCESS: Using Google credentials from environment variable")
     except Exception as e:
-        print(f"ERROR: Vertex AI initialization failed: {e}")
-        _vertexai_initialized = True
-        return None
+        print(f"ERROR: Failed to write credentials from environment: {e}")
+elif os.path.exists(CREDENTIALS_PATH):
+    # Development: use local credentials file
+    os.environ['GOOGLE_APPLICATION_CREDENTIALS'] = CREDENTIALS_PATH
+    print(f"SUCCESS: Using local credentials file at {CREDENTIALS_PATH}")
+else:
+    print(f"WARNING: No Google credentials found. Image generation will not work.")
+
+# Initialize Vertex AI
+imagen_model_preview = None
+try:
+    if os.getenv('GOOGLE_APPLICATION_CREDENTIALS'):
+        vertexai.init(project=os.getenv('GCP_PROJECT_ID'), location="us-central1")
+
+        # A balanced model that offers a good mix of quality and speed for general-purpose image generation.
+        # Imagen_Model = "imagen-4.0-generate-preview-06-06"
+
+        # A model optimized for speed and low latency, ideal for real-time applications.
+        # Imagen_Model = "imagen-4.0-fast-generate-preview-06-06"
+
+        # The highest quality model in the family, best for complex prompts, high detail, and accurate text rendering.
+        # Imagen_Model = "imagen-4.0-ultra-generate-preview-06-06"
+
+        #Unlike standard Imagen, this model has "reasoning" capabilities. It understands that "Yugadi" isn't just a text string; it implies festivity, leaves, green, yellow, traditional vibes.
+        Imagen_Model = "gemini-3-pro-image-preview"
+
+
+        imagen_model_preview = ImageGenerationModel.from_pretrained(Imagen_Model)
+        
+        if imagen_model_preview:
+            print(f"imagen_model_preview initialized successfully: {imagen_model_preview}")
+            print(f"Using model: {Imagen_Model}")
+        else:
+            print(f"imagen_model_preview failed to initialize")
+            print(f"Model failed: {Imagen_Model}")
+        print("SUCCESS: Vertex AI initialized successfully")
+    else:
+        print("WARNING: Skipping Vertex AI initialization - no credentials available")
+except Exception as e:
+    error_details = traceback.format_exc()
+    print(f"CRITICAL: Could not initialize Vertex AI. Error: {e}")
+    print(f"DEBUG: Full error traceback: {error_details}")
+    imagen_model_preview = None
 
 
 
@@ -558,12 +568,10 @@ def poster_generator_view(request):
     poster_url = None
 
     if request.method == 'POST':
-        # Initialize Vertex AI on first use
-        model = initialize_vertex_ai()
-        if model is None:
-            messages.error(request, "Poster generation is currently unavailable. Please try again later.")
+        # Check if imagen_model_preview is available
+        if 'imagen_model_preview' not in globals() or imagen_model_preview is None:
+            messages.error(request, "Poster generation is currently unavailable due to a configuration error. Please contact support.")
             return redirect('dashboard')
-        
         promotion_name = request.POST.get("promotion_name", "").strip()
         offer_type = request.POST.get("offer_type")
         custom_offer = request.POST.get("custom_offer")
@@ -582,7 +590,8 @@ def poster_generator_view(request):
             timing = profile.timing if hasattr(profile, 'timing') and profile.timing else "9:00 AM - 8:00 PM"
             
             prompt_text = f"""
-Create a professional and eye-catching marketing poster for the business "{business_name}" to boost customer engagement and promote its latest offer.
+            You are a creative director. Include emotional, atmospheric, and cultural details relevant to the promotion theme (e.g., festivals, seasons , etc). Keep the business details exact, but describe the visuals vividly.
+ so , Create a professional and eye-catching marketing poster for the business "{business_name}" to boost customer engagement and promote its latest offer.
 
 BUSINESS INFO:
 - Business Name: {business_name}
@@ -622,7 +631,7 @@ POSTER GOAL:
             try:
                 print(f"DEBUG: About to generate image with prompt: {prompt_text}")
                 # --- MODIFICATION: Calling the old model's 'generate_images' method ---
-                response = model.generate_images(
+                response = imagen_model_preview.generate_images(
                     prompt=prompt_text,
                     number_of_images=1,
                 )
@@ -903,6 +912,8 @@ def email_templates_view(request):
 def chatbot_view(request):
     if request.method == 'POST' and request.headers.get('X-Requested-With') == 'XMLHttpRequest':
         user_message = request.POST.get('message', '').strip()
+        current_page = request.POST.get('current_page', '').strip()
+        page_content = request.POST.get('page_content', '').strip()
         if not user_message:
             return JsonResponse({'success': False, 'error': 'Empty message.'})
 
@@ -930,6 +941,15 @@ def chatbot_view(request):
         history = request.session.get('chat_history', [])
         history.append({'role': 'user', 'content': user_message})
 
+        # Build page-specific context
+        page_context = ""
+        if current_page:
+            page_context = f"\n\nCURRENT PAGE: {current_page}"
+            if page_content:
+                page_context += f"\n\nPAGE CONTENT (form fields, buttons, and elements visible to user):\n{page_content}\n\nUse this page content to help the user. If they ask about inputs, options, or features on the current page, refer to the PAGE CONTENT above."
+            else:
+                page_context += "\nThe user is currently on this page. Help them based on the page URL and context."
+
         # --- Build rich system prompt ---
         system_prompt = (
             "You are ParlorPal’s AI assistant. Here is the user’s business profile and recent activity to help you answer their questions as a helpful, friendly, and knowledgeable assistant.\n"
@@ -941,10 +961,11 @@ def chatbot_view(request):
             f"Email: {email}\n"
             f"Recent Posters: {poster_str}\n"
             f"Captions Generated: {caption_count}\n"
+            f"{page_context}\n"
             "Help the user with any questions about their business, marketing, or navigating ParlorPal.\n"
             "If the user asks for captions, generate creative, engaging captions using their business info.\n"
             "If the user asks about their business, use the profile info above.\n"
-            "If the user asks about navigation, explain how to use ParlorPal's features.\n"
+            "If the user asks about navigation or what page they're on, use the CURRENT PAGE context above.\n"
             "Always answer naturally and conversationally, as a real human assistant would.\n"
         )
         prompt_parts = [system_prompt]
