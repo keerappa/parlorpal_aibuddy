@@ -1,23 +1,21 @@
+# env
 .env
-__pycache__/
-*.pyc
-/media/
 secrets/
 
-
-# Python
+# python
 venv/
 .venv/
 __pycache__/
 *.pyc
 
-# Django
-db.sqlite3
+# django
+*.sqlite3
+/media/
+staticfiles/
+
+# logs
 *.log
 
-# Env
-.env
-
-# OS
+# os
 .DS_Store
 Thumbs.db
