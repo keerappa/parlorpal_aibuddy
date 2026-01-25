@@ -1,22 +1,50 @@
-# env
+# Environment variables
 .env
+.env.local
+.env.*.local
 secrets/
 
-# python
+# Python
 venv/
 .venv/
+env/
+ENV/
 __pycache__/
-*.pyc
+*.py[cod]
+*$py.class
+*.so
+.Python
+pip-log.txt
+pip-delete-this-directory.txt
 
-# django
-# db.sqlite3
-# *.sqlite3
+# Django
 /media/
 staticfiles/
-
-# logs
 *.log
+local_settings.py
 
-# os
+# Testing
+.pytest_cache/
+.coverage
+htmlcov/
+.tox/
+.nox/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS
 .DS_Store
 Thumbs.db
+*.bak
+
+# Distribution / packaging
+build/
+dist/
+*.egg-info/
+*.egg
+wheels/
