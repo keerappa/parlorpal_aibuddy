@@ -34,6 +34,7 @@ google-cloud-aiplatform
 google-auth
 google-api-core
 google-generativeai
+google-genai
 
 # AI/ML dependencies
 pydantic
