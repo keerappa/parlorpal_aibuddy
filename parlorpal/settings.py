@@ -48,6 +48,7 @@ DEBUG = True  # Set to True for development to serve media files
 ALLOWED_HOSTS = ['*']
 CSRF_TRUSTED_ORIGINS = [
     "https://web-production-209f.up.railway.app",
+    "https://parlorpal.onrender.com",
 ]
 
 
@@ -198,4 +199,4 @@ EMAIL_HOST_PASSWORD = os.getenv('GMAIL_APP_PASSWORD', 'your-app-password')  # Se
 DEFAULT_FROM_EMAIL = os.getenv('GMAIL_USER', 'your-gmail@gmail.com')  # Set in .env file
 
 # Site URL for email links
-SITE_URL = 'http://127.0.0.1:8000'  # Change to your domain in production
+SITE_URL = os.environ.get('SITE_URL', 'http://127.0.0.1:8000')  # Change to your domain in production

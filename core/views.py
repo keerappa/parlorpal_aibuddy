@@ -182,9 +182,9 @@ def login_view(request):
                 password=form.cleaned_data['password']
             )
             if user:
-                # Stage user for 2FA verification before completing login
-                request.session['pre_2fa_user_id'] = user.id
-                return redirect('two_factor')
+                # Direct login without 2FA
+                login(request, user)
+                return redirect('dashboard')
             else:
                 messages.error(request, "Invalid username or password.")
     else:
