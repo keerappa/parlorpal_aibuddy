@@ -131,22 +131,35 @@ WSGI_APPLICATION = "parlorpal.wsgi.application"
 
 import dj_database_url
 
-# SQLite Database (Primary)
-DATABASES = {
-    "default": {
-        "ENGINE": "django.db.backends.sqlite3",
-        "NAME": BASE_DIR / "db.sqlite3",
+SUPABASE_CONN = os.getenv("SUPABASE_DB_CONNECTION_STRING")
+# SUPABASE_CONN = os.getenv("")
+
+
+if SUPABASE_CONN:
+    # ✅ Supabase Postgres (Primary)
+    DATABASES = {
+        "default": dj_database_url.parse(
+            SUPABASE_CONN,
+            conn_max_age=600,
+            conn_health_checks=True,
+        )
     }
+else:
+    # ✅ SQLite fallback (keeps db.sqlite3 untouched)
+    DATABASES = {
+        "default": {
+            "ENGINE": "django.db.backends.sqlite3",
+            "NAME": BASE_DIR / "db.sqlite3",
+        }
+    }
+
+
+# ✅ Add SQLite as secondary DB (for migration export)
+DATABASES["sqlite"] = {
+    "ENGINE": "django.db.backends.sqlite3",
+    "NAME": BASE_DIR / "db.sqlite3",
 }
 
-# Supabase PostgreSQL (Available for future migration)
-# DATABASES = {
-#     "default": dj_database_url.config(
-#         default=os.getenv("SUPABASE_DB_CONNECTION_STRING"),
-#         conn_max_age=600,
-#         conn_health_checks=True,
-#     )
-# }
 
 
 # Password validation

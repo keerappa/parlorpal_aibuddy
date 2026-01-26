@@ -45,3 +45,5 @@ huggingface-hub
 # Additional utilities
 six
 packaging
+
+firebase-admin

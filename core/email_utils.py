@@ -148,3 +148,90 @@ def is_token_valid(user, token):
             return False
     
     return True 
+
+
+def send_password_reset_otp_email(user, otp):
+    """Send password reset OTP via email"""
+    try:
+        subject = "🔐 Your Password Reset OTP - ParlorPal"
+        
+        # HTML Email template
+        html_message = f"""
+        <!DOCTYPE html>
+        <html>
+        <head>
+            <style>
+                body {{ font-family: Arial, sans-serif; line-height: 1.6; color: #333; }}
+                .container {{ max-width: 600px; margin: 0 auto; padding: 20px; }}
+                .header {{ background: linear-gradient(135deg, #A88BEB, #E94560); color: white; padding: 30px; text-align: center; border-radius: 10px 10px 0 0; }}
+                .content {{ background: #f9f9f9; padding: 30px; border-radius: 0 0 10px 10px; }}
+                .otp-box {{ background: white; padding: 20px; text-align: center; font-size: 32px; font-weight: bold; letter-spacing: 8px; color: #A88BEB; border: 2px dashed #A88BEB; border-radius: 8px; margin: 20px 0; }}
+                .warning {{ background: #fff3cd; padding: 15px; border-left: 4px solid #ffc107; margin: 20px 0; }}
+                .footer {{ text-align: center; margin-top: 30px; font-size: 12px; color: #666; }}
+            </style>
+        </head>
+        <body>
+            <div class="container">
+                <div class="header">
+                    <h1>🔐 Password Reset OTP</h1>
+                </div>
+                <div class="content">
+                    <p>Hello <strong>{user.username}</strong>,</p>
+                    
+                    <p>We received a request to reset your password. Use the OTP below to proceed:</p>
+                    
+                    <div class="otp-box">{otp}</div>
+                    
+                    <div class="warning">
+                        <strong>⚠️ Security Note:</strong>
+                        <ul style="margin: 10px 0;">
+                            <li>This OTP is valid for <strong>10 minutes</strong></li>
+                            <li>Never share this OTP with anyone</li>
+                            <li>If you didn't request this, please ignore this email</li>
+                        </ul>
+                    </div>
+                    
+                    <p>After entering the OTP, you'll be able to set a new password for your ParlorPal account.</p>
+                    
+                    <p style="margin-top: 30px;">Best regards,<br><strong>ParlorPal Team</strong></p>
+                </div>
+                <div class="footer">
+                    <p>© 2026 ParlorPal. AI-powered marketing for businesses.</p>
+                </div>
+            </div>
+        </body>
+        </html>
+        """
+        
+        # Plain text version
+        plain_message = f"""
+        Password Reset OTP - ParlorPal
+        
+        Hello {user.username},
+        
+        We received a request to reset your password. Use the OTP below to proceed:
+        
+        {otp}
+        
+        This OTP is valid for 10 minutes.
+        Never share this OTP with anyone.
+        If you didn't request this, please ignore this email.
+        
+        Best regards,
+        ParlorPal Team
+        """
+        
+        # Send email
+        send_mail(
+            subject=subject,
+            message=plain_message,
+            from_email=settings.DEFAULT_FROM_EMAIL,
+            recipient_list=[user.email],
+            html_message=html_message,
+            fail_silently=False,
+        )
+        
+        return True
+    except Exception as e:
+        print(f"Error sending password reset OTP email: {e}")
+        return False 

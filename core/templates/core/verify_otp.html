@@ -1,0 +1,131 @@
+{% extends "core/base.html" %}
+
+{% block title %}Verify OTP - ParlorPal{% endblock %}
+
+{% block content %}
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-md-5">
+            <div class="card shadow">
+                <div class="card-body">
+                    <h2 class="card-title text-center mb-4">
+                        <i class="fas fa-shield-alt"></i> Verify OTP
+                    </h2>
+                    
+                    <!-- Messages -->
+                    {% if messages %}
+                        {% for message in messages %}
+                            <div class="alert alert-{{ message.tags }} alert-dismissible fade show" role="alert">
+                                {{ message }}
+                                <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+                            </div>
+                        {% endfor %}
+                    {% endif %}
+                    
+                    <p class="text-muted text-center mb-4">
+                        Enter the 6-digit OTP sent to your 
+                        {% if request.session.reset_method == 'email' %}
+                            email
+                        {% else %}
+                            phone
+                        {% endif %}
+                    </p>
+                    
+                    <form method="post" id="otpForm">
+                        {% csrf_token %}
+                        
+                        <div class="mb-4">
+                            <label for="otp" class="form-label text-center d-block">One-Time Password</label>
+                            <div class="otp-input-container">
+                                <input 
+                                    type="text" 
+                                    class="form-control text-center otp-input" 
+                                    id="otp" 
+                                    name="otp" 
+                                    maxlength="6" 
+                                    placeholder="000000"
+                                    pattern="[0-9]{6}"
+                                    required
+                                    autocomplete="off"
+                                >
+                            </div>
+                            <small class="form-text text-muted d-block text-center mt-2">
+                                OTP is valid for 10 minutes
+                            </small>
+                        </div>
+                        
+                        <button type="submit" class="btn btn-primary w-100" id="verifyBtn">
+                            <i class="fas fa-check-circle"></i> Verify OTP
+                        </button>
+                    </form>
+                    
+                    <div class="text-center mt-4">
+                        <p class="text-muted mb-2">Didn't receive the OTP?</p>
+                        <a href="{% url 'forgot_password' %}" class="btn btn-outline-secondary btn-sm">
+                            <i class="fas fa-redo"></i> Request New OTP
+                        </a>
+                    </div>
+                    
+                    <div class="text-center mt-3">
+                        <a href="{% url 'login' %}" class="text-decoration-none">
+                            <i class="fas fa-arrow-left"></i> Back to Login
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Help Text -->
+            <div class="alert alert-warning mt-3">
+                <i class="fas fa-exclamation-triangle"></i> 
+                <strong>Maximum 5 attempts allowed.</strong> After 5 failed attempts, 
+                you'll need to request a new OTP.
+            </div>
+        </div>
+    </div>
+</div>
+
+<style>
+    .card {
+        border-radius: 10px;
+    }
+    
+    .otp-input {
+        font-size: 2rem;
+        font-weight: bold;
+        letter-spacing: 0.5rem;
+        padding: 20px;
+        font-family: 'Courier New', monospace;
+    }
+    
+    .otp-input:focus {
+        border-color: var(--primary-color, #007bff);
+        box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+    }
+    
+    .btn-primary {
+        padding: 12px;
+        font-weight: 600;
+    }
+    
+    .otp-input::placeholder {
+        opacity: 0.3;
+    }
+</style>
+
+<script>
+    // Auto-focus OTP input on page load
+    document.addEventListener('DOMContentLoaded', function() {
+        document.getElementById('otp').focus();
+    });
+    
+    // Only allow numbers in OTP input
+    document.getElementById('otp').addEventListener('input', function(e) {
+        this.value = this.value.replace(/[^0-9]/g, '');
+    });
+    
+    // Prevent form resubmission on page refresh
+    if (window.history.replaceState) {
+        window.history.replaceState(null, null, window.location.href);
+    }
+</script>
+{% endblock %}

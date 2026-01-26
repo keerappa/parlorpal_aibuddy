@@ -1238,3 +1238,214 @@ def generate_video_view(request):
         'error': error
     })
 
+
+# -----------------
+# FORGOT PASSWORD VIEWS
+# -----------------
+
+def forgot_password_view(request):
+    """
+    View for initiating password reset
+    User can choose email or phone OTP method
+    """
+    if request.method == 'POST':
+        identifier = request.POST.get('identifier', '').strip()
+        method = request.POST.get('method', 'email')  # 'email' or 'phone'
+        
+        if not identifier:
+            messages.error(request, 'Please enter your email or phone number.')
+            return render(request, 'core/forgot_password.html')
+        
+        # Try to find user by email or phone
+        user = None
+        if '@' in identifier:
+            # Email provided
+            try:
+                user = CustomUser.objects.get(email=identifier)
+            except CustomUser.DoesNotExist:
+                # Don't reveal if email exists for security
+                messages.success(request, 'If an account with that email exists, you will receive an OTP.')
+                return redirect('forgot_password')
+        else:
+            # Phone number provided
+            from .sms_utils import validate_phone_number
+            is_valid, formatted_phone = validate_phone_number(identifier)
+            
+            if not is_valid:
+                messages.error(request, 'Invalid phone number format. Use 10-digit number or +91XXXXXXXXXX')
+                return render(request, 'core/forgot_password.html')
+            
+            try:
+                user = CustomUser.objects.get(phone=formatted_phone)
+            except CustomUser.DoesNotExist:
+                # Don't reveal if phone exists for security
+                messages.success(request, 'If an account with that phone exists, you will receive an OTP.')
+                return redirect('forgot_password')
+        
+        if user:
+            # Generate OTP
+            import random
+            from datetime import timedelta
+            from django.utils import timezone
+            from .models import PasswordResetOTP
+            from .email_utils import send_password_reset_otp_email
+            from .sms_utils import send_sms_otp
+            
+            otp = str(random.randint(100000, 999999))
+            expires_at = timezone.now() + timedelta(minutes=10)
+            
+            # Create OTP record
+            PasswordResetOTP.objects.create(
+                user=user,
+                otp=otp,
+                method=method,
+                expires_at=expires_at
+            )
+            
+            # Send OTP
+            if method == 'email':
+                if send_password_reset_otp_email(user, otp):
+                    # Store user ID in session for verification
+                    request.session['reset_user_id'] = user.id
+                    request.session['reset_method'] = 'email'
+                    messages.success(request, f'OTP sent to your email: {user.email}')
+                    return redirect('verify_otp')
+                else:
+                    messages.error(request, 'Failed to send email. Please try again.')
+            else:  # phone
+                result = send_sms_otp(user.phone, otp)
+                if result.get('success'):
+                    request.session['reset_user_id'] = user.id
+                    request.session['reset_method'] = 'phone'
+                    messages.success(request, f'OTP sent to your phone: {user.phone}')
+                    return redirect('verify_otp')
+                else:
+                    messages.error(request, 'Failed to send SMS. Please try email method.')
+        
+        return render(request, 'core/forgot_password.html')
+    
+    return render(request, 'core/forgot_password.html')
+
+
+def verify_otp_view(request):
+    """
+    View for verifying OTP entered by user
+    """
+    # Check if user has initiated password reset
+    user_id = request.session.get('reset_user_id')
+    if not user_id:
+        messages.error(request, 'Please start the password reset process first.')
+        return redirect('forgot_password')
+    
+    if request.method == 'POST':
+        entered_otp = request.POST.get('otp', '').strip()
+        
+        if not entered_otp or len(entered_otp) != 6:
+            messages.error(request, 'Please enter a valid 6-digit OTP.')
+            return render(request, 'core/verify_otp.html')
+        
+        try:
+            from .models import PasswordResetOTP
+            from django.utils import timezone
+            
+            user = CustomUser.objects.get(id=user_id)
+            
+            # Get latest unused OTP for this user
+            otp_record = PasswordResetOTP.objects.filter(
+                user=user,
+                is_used=False
+            ).order_by('-created_at').first()
+            
+            if not otp_record:
+                messages.error(request, 'No valid OTP found. Please request a new one.')
+                return redirect('forgot_password')
+            
+            # Increment attempts
+            otp_record.attempts += 1
+            otp_record.save()
+            
+            # Check if too many attempts
+            if otp_record.attempts > 5:
+                otp_record.is_used = True
+                otp_record.save()
+                messages.error(request, 'Too many attempts. Please request a new OTP.')
+                return redirect('forgot_password')
+            
+            # Verify OTP
+            if otp_record.otp == entered_otp and otp_record.is_valid():
+                # Mark as used
+                otp_record.is_used = True
+                otp_record.save()
+                
+                # Store verification in session
+                request.session['otp_verified'] = True
+                messages.success(request, 'OTP verified! Now set your new password.')
+                return redirect('reset_password')
+            else:
+                if not otp_record.is_valid():
+                    messages.error(request, 'OTP has expired. Please request a new one.')
+                    return redirect('forgot_password')
+                else:
+                    remaining = 5 - otp_record.attempts
+                    messages.error(request, f'Invalid OTP. {remaining} attempts remaining.')
+        
+        except CustomUser.DoesNotExist:
+            messages.error(request, 'User not found. Please try again.')
+            return redirect('forgot_password')
+        except Exception as e:
+            messages.error(request, f'Error verifying OTP: {str(e)}')
+    
+    return render(request, 'core/verify_otp.html')
+
+
+def reset_password_view(request):
+    """
+    View for setting new password after OTP verification
+    """
+    # Check if OTP was verified
+    if not request.session.get('otp_verified'):
+        messages.error(request, 'Please verify OTP first.')
+        return redirect('forgot_password')
+    
+    user_id = request.session.get('reset_user_id')
+    if not user_id:
+        messages.error(request, 'Invalid session. Please start again.')
+        return redirect('forgot_password')
+    
+    if request.method == 'POST':
+        new_password = request.POST.get('new_password', '').strip()
+        confirm_password = request.POST.get('confirm_password', '').strip()
+        
+        if not new_password or not confirm_password:
+            messages.error(request, 'Please fill in both password fields.')
+            return render(request, 'core/reset_password.html')
+        
+        if new_password != confirm_password:
+            messages.error(request, 'Passwords do not match.')
+            return render(request, 'core/reset_password.html')
+        
+        if len(new_password) < 8:
+            messages.error(request, 'Password must be at least 8 characters long.')
+            return render(request, 'core/reset_password.html')
+        
+        try:
+            user = CustomUser.objects.get(id=user_id)
+            user.set_password(new_password)
+            user.save()
+            
+            # Clear session data
+            request.session.pop('reset_user_id', None)
+            request.session.pop('reset_method', None)
+            request.session.pop('otp_verified', None)
+            
+            messages.success(request, 'Password reset successful! You can now login with your new password.')
+            return redirect('login')
+        
+        except CustomUser.DoesNotExist:
+            messages.error(request, 'User not found.')
+            return redirect('forgot_password')
+        except Exception as e:
+            messages.error(request, f'Error resetting password: {str(e)}')
+    
+    return render(request, 'core/reset_password.html')
+

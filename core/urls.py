@@ -30,5 +30,10 @@ urlpatterns = [
     path('history/', views.user_history_view, name='user_history'),
     path('insights/', views.insights_view, name='insights'),
     
+    # Password Reset (Forgot Password)
+    path('forgot-password/', views.forgot_password_view, name='forgot_password'),
+    path('verify-otp/', views.verify_otp_view, name='verify_otp'),
+    path('reset-password/', views.reset_password_view, name='reset_password'),
+    
     # path('healthz/', views.health_check, name='health_check'),
 ]

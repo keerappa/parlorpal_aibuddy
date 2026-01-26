@@ -1,5 +1,686 @@
 [
 {
+  "model": "admin.logentry",
+  "pk": 1,
+  "fields": {
+    "action_time": "2025-08-10T13:21:06.594Z",
+    "user": 4,
+    "content_type": 7,
+    "object_id": "3",
+    "object_repr": "niranjan",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 2,
+  "fields": {
+    "action_time": "2025-08-10T19:03:52.911Z",
+    "user": 4,
+    "content_type": 7,
+    "object_id": "12",
+    "object_repr": "finall",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"Username\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 3,
+  "fields": {
+    "action_time": "2025-10-09T20:52:16.111Z",
+    "user": 4,
+    "content_type": 7,
+    "object_id": "13",
+    "object_repr": "Rajashekar",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"Email address\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 4,
+  "fields": {
+    "action_time": "2025-10-09T20:52:26.117Z",
+    "user": 4,
+    "content_type": 7,
+    "object_id": "13",
+    "object_repr": "Rajashekar",
+    "action_flag": 2,
+    "change_message": "[]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 5,
+  "fields": {
+    "action_time": "2025-10-09T21:13:10.820Z",
+    "user": 4,
+    "content_type": 7,
+    "object_id": "2",
+    "object_repr": "abhishek",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"Email address\"]}}]"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 1,
+  "fields": {
+    "name": "Can add log entry",
+    "content_type": 1,
+    "codename": "add_logentry"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 2,
+  "fields": {
+    "name": "Can change log entry",
+    "content_type": 1,
+    "codename": "change_logentry"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 3,
+  "fields": {
+    "name": "Can delete log entry",
+    "content_type": 1,
+    "codename": "delete_logentry"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 4,
+  "fields": {
+    "name": "Can view log entry",
+    "content_type": 1,
+    "codename": "view_logentry"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 5,
+  "fields": {
+    "name": "Can add permission",
+    "content_type": 2,
+    "codename": "add_permission"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 6,
+  "fields": {
+    "name": "Can change permission",
+    "content_type": 2,
+    "codename": "change_permission"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 7,
+  "fields": {
+    "name": "Can delete permission",
+    "content_type": 2,
+    "codename": "delete_permission"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 8,
+  "fields": {
+    "name": "Can view permission",
+    "content_type": 2,
+    "codename": "view_permission"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 9,
+  "fields": {
+    "name": "Can add group",
+    "content_type": 3,
+    "codename": "add_group"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 10,
+  "fields": {
+    "name": "Can change group",
+    "content_type": 3,
+    "codename": "change_group"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 11,
+  "fields": {
+    "name": "Can delete group",
+    "content_type": 3,
+    "codename": "delete_group"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 12,
+  "fields": {
+    "name": "Can view group",
+    "content_type": 3,
+    "codename": "view_group"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 13,
+  "fields": {
+    "name": "Can add user",
+    "content_type": 4,
+    "codename": "add_user"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 14,
+  "fields": {
+    "name": "Can change user",
+    "content_type": 4,
+    "codename": "change_user"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 15,
+  "fields": {
+    "name": "Can delete user",
+    "content_type": 4,
+    "codename": "delete_user"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 16,
+  "fields": {
+    "name": "Can view user",
+    "content_type": 4,
+    "codename": "view_user"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 17,
+  "fields": {
+    "name": "Can add content type",
+    "content_type": 5,
+    "codename": "add_contenttype"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 18,
+  "fields": {
+    "name": "Can change content type",
+    "content_type": 5,
+    "codename": "change_contenttype"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 19,
+  "fields": {
+    "name": "Can delete content type",
+    "content_type": 5,
+    "codename": "delete_contenttype"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 20,
+  "fields": {
+    "name": "Can view content type",
+    "content_type": 5,
+    "codename": "view_contenttype"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 21,
+  "fields": {
+    "name": "Can add session",
+    "content_type": 6,
+    "codename": "add_session"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 22,
+  "fields": {
+    "name": "Can change session",
+    "content_type": 6,
+    "codename": "change_session"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 23,
+  "fields": {
+    "name": "Can delete session",
+    "content_type": 6,
+    "codename": "delete_session"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 24,
+  "fields": {
+    "name": "Can view session",
+    "content_type": 6,
+    "codename": "view_session"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 25,
+  "fields": {
+    "name": "Can add custom user",
+    "content_type": 7,
+    "codename": "add_customuser"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 26,
+  "fields": {
+    "name": "Can change custom user",
+    "content_type": 7,
+    "codename": "change_customuser"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 27,
+  "fields": {
+    "name": "Can delete custom user",
+    "content_type": 7,
+    "codename": "delete_customuser"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 28,
+  "fields": {
+    "name": "Can view custom user",
+    "content_type": 7,
+    "codename": "view_customuser"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 29,
+  "fields": {
+    "name": "Can add business profile",
+    "content_type": 8,
+    "codename": "add_businessprofile"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 30,
+  "fields": {
+    "name": "Can change business profile",
+    "content_type": 8,
+    "codename": "change_businessprofile"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 31,
+  "fields": {
+    "name": "Can delete business profile",
+    "content_type": 8,
+    "codename": "delete_businessprofile"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 32,
+  "fields": {
+    "name": "Can view business profile",
+    "content_type": 8,
+    "codename": "view_businessprofile"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 33,
+  "fields": {
+    "name": "Can add search history",
+    "content_type": 9,
+    "codename": "add_searchhistory"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 34,
+  "fields": {
+    "name": "Can change search history",
+    "content_type": 9,
+    "codename": "change_searchhistory"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 35,
+  "fields": {
+    "name": "Can delete search history",
+    "content_type": 9,
+    "codename": "delete_searchhistory"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 36,
+  "fields": {
+    "name": "Can view search history",
+    "content_type": 9,
+    "codename": "view_searchhistory"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 37,
+  "fields": {
+    "name": "Can add festival",
+    "content_type": 10,
+    "codename": "add_festival"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 38,
+  "fields": {
+    "name": "Can change festival",
+    "content_type": 10,
+    "codename": "change_festival"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 39,
+  "fields": {
+    "name": "Can delete festival",
+    "content_type": 10,
+    "codename": "delete_festival"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 40,
+  "fields": {
+    "name": "Can view festival",
+    "content_type": 10,
+    "codename": "view_festival"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 41,
+  "fields": {
+    "name": "Can add poster generation",
+    "content_type": 11,
+    "codename": "add_postergeneration"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 42,
+  "fields": {
+    "name": "Can change poster generation",
+    "content_type": 11,
+    "codename": "change_postergeneration"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 43,
+  "fields": {
+    "name": "Can delete poster generation",
+    "content_type": 11,
+    "codename": "delete_postergeneration"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 44,
+  "fields": {
+    "name": "Can view poster generation",
+    "content_type": 11,
+    "codename": "view_postergeneration"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 45,
+  "fields": {
+    "name": "Can add User History",
+    "content_type": 12,
+    "codename": "add_userhistory"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 46,
+  "fields": {
+    "name": "Can change User History",
+    "content_type": 12,
+    "codename": "change_userhistory"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 47,
+  "fields": {
+    "name": "Can delete User History",
+    "content_type": 12,
+    "codename": "delete_userhistory"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 48,
+  "fields": {
+    "name": "Can view User History",
+    "content_type": 12,
+    "codename": "view_userhistory"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 49,
+  "fields": {
+    "name": "Can add two factor auth",
+    "content_type": 13,
+    "codename": "add_twofactorauth"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 50,
+  "fields": {
+    "name": "Can change two factor auth",
+    "content_type": 13,
+    "codename": "change_twofactorauth"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 51,
+  "fields": {
+    "name": "Can delete two factor auth",
+    "content_type": 13,
+    "codename": "delete_twofactorauth"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 52,
+  "fields": {
+    "name": "Can view two factor auth",
+    "content_type": 13,
+    "codename": "view_twofactorauth"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 53,
+  "fields": {
+    "name": "Can add Password Reset OTP",
+    "content_type": 14,
+    "codename": "add_passwordresetotp"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 54,
+  "fields": {
+    "name": "Can change Password Reset OTP",
+    "content_type": 14,
+    "codename": "change_passwordresetotp"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 55,
+  "fields": {
+    "name": "Can delete Password Reset OTP",
+    "content_type": 14,
+    "codename": "delete_passwordresetotp"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 56,
+  "fields": {
+    "name": "Can view Password Reset OTP",
+    "content_type": 14,
+    "codename": "view_passwordresetotp"
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "pk": 1,
+  "fields": {
+    "app_label": "admin",
+    "model": "logentry"
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "pk": 2,
+  "fields": {
+    "app_label": "auth",
+    "model": "permission"
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "pk": 3,
+  "fields": {
+    "app_label": "auth",
+    "model": "group"
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "pk": 4,
+  "fields": {
+    "app_label": "auth",
+    "model": "user"
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "pk": 5,
+  "fields": {
+    "app_label": "contenttypes",
+    "model": "contenttype"
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "pk": 6,
+  "fields": {
+    "app_label": "sessions",
+    "model": "session"
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "pk": 7,
+  "fields": {
+    "app_label": "core",
+    "model": "customuser"
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "pk": 8,
+  "fields": {
+    "app_label": "core",
+    "model": "businessprofile"
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "pk": 9,
+  "fields": {
+    "app_label": "core",
+    "model": "searchhistory"
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "pk": 10,
+  "fields": {
+    "app_label": "core",
+    "model": "festival"
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "pk": 11,
+  "fields": {
+    "app_label": "core",
+    "model": "postergeneration"
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "pk": 12,
+  "fields": {
+    "app_label": "core",
+    "model": "userhistory"
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "pk": 13,
+  "fields": {
+    "app_label": "core",
+    "model": "twofactorauth"
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "pk": 14,
+  "fields": {
+    "app_label": "core",
+    "model": "passwordresetotp"
+  }
+},
+{
   "model": "sessions.session",
   "pk": "0dwpdl475op09ywc8o9wtbuztppjvyd1",
   "fields": {
@@ -29,14 +710,6 @@
   "fields": {
     "session_data": ".eJxVjr1uwjAUhV_l4oUlihpDAmGpygRDJbYOpYqu4xvsktit7VAhxLs3plFbvPme7_xcWIV9UFXvyVVashWbs-T_TWB9JBMF-Y7mYNPamuC0SCOSjqpPn62kdj2ydwEKvRrcRVZk9DC8XPI6y7iccZ7lM2qKbJYJkeOSi3whipwWfMllyTPCplw2pSyFaOZxVa0wVEr7YN2ZrV4vzNmWhuhYE-VhGJkwHBS1rWXX5JcQNtwBmwhAUORoAttpB2fbO3jaAno_5KMJ0DjbwQ5da90O2xQ29gtqNLCFIf0jGiBYiecE9gxlp83Uw7r32pD3e_YIL4pi_g1UeCL47MkHbY0HFLYPP5VidCTQoTtS0OaQgHVg8KQPGL9_G5Lb0rh5aB6XTtj17foNW2yZNQ:1ueT12:kZhOfM3MlKSWPFaBVAcLRvsUXieDZ8s3JgEF0D1OdUE",
     "expire_date": "2025-08-06T06:31:48.697Z"
-  }
-},
-{
-  "model": "sessions.session",
-  "pk": "1t8le30g5h3zymo9y3v812tc4c3vkgg7",
-  "fields": {
-    "session_data": ".eJxVjMEOwiAQBf-FsyEsuIX26N0vMIYAS6VqICn0YIz_bpv0oNc38-bNrFtaskuNs52IDQwkO_yO3oVHzBuhu8u3wkPJbZ483xS-08rPheLztLt_geRqWt86gJGiR1BCI-ljJOWFptgpaZRRHRoQJFEiAYyuH9WISgb00QHqLsAaDck1m6bayvxiw-X6-QLjTz1P:1vk6IP:5WyN7V1JKmiaiR6-KpUB-mGjVz0tSHerCYBWTDc1eAg",
-    "expire_date": "2026-02-08T20:01:17.307Z"
   }
 },
 {
@@ -153,6 +826,14 @@
 },
 {
   "model": "sessions.session",
+  "pk": "jfdd0yu0vxrnldts8uhwh8bp8zk8b84f",
+  "fields": {
+    "session_data": ".eJxVjEEOwiAQRe_C2hAYOqW4dN8zkGEAqRqalHZlvLtt0oVu33v_v4WnbS1-a2nxUxRX0YnLLwvEz1QPER9U77Pkua7LFOSRyNM2Oc4xvW5n-3dQqJV9HSxiQGQAQN0D62gQU0I3BBNNdjtU5JRj22HPaAdAlTOR0mg0WC0-X7t4Nn4:1vkKIW:DuG47Iv8gMHNxSgrHs2CXWFe3l2kEZjrM8O1Ggyt5Uw",
+    "expire_date": "2026-02-09T10:58:20.297Z"
+  }
+},
+{
+  "model": "sessions.session",
   "pk": "jht6hjagl4nlxm5glvnhyrvwi6aho36w",
   "fields": {
     "session_data": ".eJxVjEEOwiAQRe_C2hAYOqW4dN8zkGEAqRqalHZlvLtt0oVu33v_v4WnbS1-a2nxUxRX0YnLLwvEz1QPER9U77Pkua7LFOSRyNM2Oc4xvW5n-3dQqJV9HSxiQGQAQN0D62gQU0I3BBNNdjtU5JRj22HPaAdAlTOR0mg0WC0-X7t4Nn4:1vfipg:LS7zZzaP8M5g3KZmbuZzzo_-Bv6kLPP1oAm61tc2CTc",
@@ -213,6 +894,14 @@
   "fields": {
     "session_data": ".eJxVjEEOwiAQRe_C2pDCQAdcuu8ZyMBQqRqalHZlvLtt0oVu_3vvv0WgbS1ha3kJE4urUEpcfsdI6ZnrQfhB9T7LNNd1maI8FHnSJoeZ8-t2un8HhVrZa91Hzs6m3nsgsAb1GL3tIrID7ZX2RiEgIiQyhrroiXebAGFMAI7F5wvmqTdU:1ue9wG:8M_vVtgdWEnq7dlwtJJbsIbRcalJmwlm5c-s51SfYY0",
     "expire_date": "2025-08-05T10:09:36.218Z"
+  }
+},
+{
+  "model": "sessions.session",
+  "pk": "prqcq5w8arn1roqp9e2ch2byqn68rnwc",
+  "fields": {
+    "session_data": ".eJxVjEEOwiAQRe_C2hAYOqW4dN8zkGEAqRqalHZlvLtt0oVu33v_v4WnbS1-a2nxUxRX0YnLLwvEz1QPER9U77Pkua7LFOSRyNM2Oc4xvW5n-3dQqJV9HSxiQGQAQN0D62gQU0I3BBNNdjtU5JRj22HPaAdAlTOR0mg0WC0-X7t4Nn4:1vk8lY:FDxntsN7WfytnjSM5h4JsiKHISYraadtimghRYooWXI",
+    "expire_date": "2026-02-08T22:39:32.210Z"
   }
 },
 {
@@ -281,6 +970,7 @@
 },
 {
   "model": "core.customuser",
+  "pk": 1,
   "fields": {
     "password": "pbkdf2_sha256$870000$OkRorSJJy2O1GiNsVzsFDn$KwcjdceRgyRp7Q+PTfVnSyt9GoGm5QhLkrrMoyyzLAw=",
     "last_login": "2025-07-19T22:04:36.903Z",
@@ -302,6 +992,7 @@
 },
 {
   "model": "core.customuser",
+  "pk": 2,
   "fields": {
     "password": "pbkdf2_sha256$870000$9Jifx1hlB3GrkJoOAlAkCB$YuvUZjvK5LECYaGGf68eF/lIGBeBli++TOrs1NvH48c=",
     "last_login": "2025-10-09T21:14:50.086Z",
@@ -323,9 +1014,10 @@
 },
 {
   "model": "core.customuser",
+  "pk": 4,
   "fields": {
     "password": "pbkdf2_sha256$870000$E3D9uJdgocb0ULS9et822I$l/zc/aIF13X5dnPeukISaPaU7ALsVBPYZTQZzHcj7Lk=",
-    "last_login": "2026-01-25T18:38:30.196Z",
+    "last_login": "2026-01-26T10:58:19.946Z",
     "is_superuser": true,
     "username": "admin",
     "first_name": "",
@@ -344,6 +1036,7 @@
 },
 {
   "model": "core.customuser",
+  "pk": 5,
   "fields": {
     "password": "pbkdf2_sha256$870000$f7qERrVutlJ2aNUwI7H8r8$YTjXrYjTHkB2oLNO3CIQMgkpEnHPZKGyyUqREvSBRDk=",
     "last_login": "2025-08-14T09:20:37.543Z",
@@ -365,6 +1058,7 @@
 },
 {
   "model": "core.customuser",
+  "pk": 6,
   "fields": {
     "password": "pbkdf2_sha256$870000$7820btPIek6JWETJKduDli$B2dvwvWqBxSzXKDxQ4f5QojeIualIIEu875Yqo18SrI=",
     "last_login": "2025-10-14T10:44:11.285Z",
@@ -386,6 +1080,7 @@
 },
 {
   "model": "core.customuser",
+  "pk": 7,
   "fields": {
     "password": "pbkdf2_sha256$870000$XG9MatHMlrPn4UVsaTxFzE$YZhlI532O9rLIeU5ZS+qvkY+AolyNDI7YasUKcXd3ps=",
     "last_login": "2025-10-10T17:27:56.573Z",
@@ -407,6 +1102,7 @@
 },
 {
   "model": "core.customuser",
+  "pk": 10,
   "fields": {
     "password": "pbkdf2_sha256$870000$8GIlxeCFfNbTzWS6z1lk6p$7F4sKA9sw3dnRlRbp4VUEqM18MjwR2vnTFb0UJQRc0c=",
     "last_login": "2025-07-20T14:15:32.866Z",
@@ -428,6 +1124,7 @@
 },
 {
   "model": "core.customuser",
+  "pk": 11,
   "fields": {
     "password": "pbkdf2_sha256$870000$vCkZSLsKsTP8lIg7gyosam$K8O/tAzFwr9VQwezpBxfauv92iN826Lrl+TujuuodpA=",
     "last_login": "2025-08-10T13:24:20.709Z",
@@ -449,6 +1146,7 @@
 },
 {
   "model": "core.customuser",
+  "pk": 12,
   "fields": {
     "password": "pbkdf2_sha256$870000$rSFG3ktfowtHG0cNbLscap$LZjDLXwA47uYEEr9bPTEIaK3e5imQZJGJ5OkNUlWt9E=",
     "last_login": "2026-01-25T19:06:55.409Z",
@@ -470,9 +1168,10 @@
 },
 {
   "model": "core.customuser",
+  "pk": 13,
   "fields": {
     "password": "pbkdf2_sha256$870000$RszGxOe4cGoy6cGEtPKRHS$nC8K1c9Fi2z6zPgE/JFxAqxCgWeZPendoBhvnAI8ZyM=",
-    "last_login": "2025-10-09T20:55:56.760Z",
+    "last_login": "2026-01-25T22:22:51.354Z",
     "is_superuser": false,
     "username": "Rajashekar",
     "first_name": "",
@@ -491,6 +1190,7 @@
 },
 {
   "model": "core.customuser",
+  "pk": 14,
   "fields": {
     "password": "pbkdf2_sha256$870000$V7d5xZbF5QsRNTIDZsOzb0$evtpI1Ekra3Cul0gZSCwXFAAXFemW/KzbViT+18GJ5U=",
     "last_login": "2025-08-10T19:34:10.577Z",
@@ -512,6 +1212,7 @@
 },
 {
   "model": "core.customuser",
+  "pk": 15,
   "fields": {
     "password": "pbkdf2_sha256$870000$zsoqyZch1ElEXMHFBN93gk$Ws+l/kM+bOnwn4MX6FTiMetogZa2cWFyqPLg0KMqpf4=",
     "last_login": "2025-09-28T05:46:58.936Z",
@@ -533,6 +1234,7 @@
 },
 {
   "model": "core.customuser",
+  "pk": 16,
   "fields": {
     "password": "pbkdf2_sha256$870000$H9ukDDnbgTNZEOdtd7fLl0$v35Mckl6ck/SokEykbEqO4crrTR4dgYAbdQcWHKvde8=",
     "last_login": "2025-10-14T10:43:19.642Z",
@@ -554,6 +1256,7 @@
 },
 {
   "model": "core.customuser",
+  "pk": 17,
   "fields": {
     "password": "pbkdf2_sha256$870000$boP5R6dR6COKJfhlgnmFVP$bh0JsgPOqKoBvxXRolGKPwwftbqa0a1wASDtKiJzDtg=",
     "last_login": "2025-10-14T10:54:53.262Z",
@@ -574,18 +1277,45 @@
   }
 },
 {
+  "model": "core.customuser",
+  "pk": 18,
+  "fields": {
+    "password": "pbkdf2_sha256$870000$8S3hMhdqlp3kxekOg4jn0u$4egx1/54zG4LfBXAhjmvEk/dUjmjz3V/OJXWDxmtLhQ=",
+    "last_login": "2026-01-25T21:15:55.805Z",
+    "is_superuser": false,
+    "username": "cmy",
+    "first_name": "",
+    "last_name": "",
+    "email": "cmy@gmail.com",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2026-01-25T21:15:36.763Z",
+    "email_verified": false,
+    "verification_token": "495d4004-2b8f-40fb-bc25-eb6f66907560",
+    "token_created_at": "2026-01-25T21:15:39.728Z",
+    "notifications_enabled": false,
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
   "model": "core.businessprofile",
   "pk": 1,
   "fields": {
-    "user": [
-      "rajesh"
-    ],
+    "user": 1,
     "business_name": "beauty parlour",
     "description": "I run a small beauty parlour from home where I provide services like haircuts, facials, threading, waxing, and occasional bridal makeup. Most of my customers are from the nearby area and come through word of mouth. I haven’t really done any marketing or promotions so far — I’ve just focused on giving good service so people come back. I know the parlour has potential to grow, and I’d love to reach more people, but I’m not very familiar with online marketing or how to get started.",
     "image": "uploads/parlour.jpeg",
     "image_url": "https://res.cloudinary.com/dgqm61eqb/image/upload/v1753015981/logos/logo_rajesh.jpg",
+    "country": "",
+    "state": "",
+    "district": "",
+    "town": "",
+    "address": "",
     "location": "",
     "phone": "",
+    "business_hours_start": null,
+    "business_hours_end": null,
     "timing": ""
   }
 },
@@ -593,15 +1323,20 @@
   "model": "core.businessprofile",
   "pk": 2,
   "fields": {
-    "user": [
-      "abhishek"
-    ],
+    "user": 2,
     "business_name": "salon",
     "description": "we offer haircut , massage head massage  etc",
     "image": "",
     "image_url": "",
+    "country": "",
+    "state": "",
+    "district": "",
+    "town": "",
+    "address": "",
     "location": "Muddebihal",
     "phone": "7483904062",
+    "business_hours_start": null,
+    "business_hours_end": null,
     "timing": "9 am - 9 pm"
   }
 },
@@ -609,15 +1344,20 @@
   "model": "core.businessprofile",
   "pk": 4,
   "fields": {
-    "user": [
-      "user1"
-    ],
+    "user": 5,
     "business_name": "Diamond Beauty Parlour",
     "description": "✨ Welcome to Diamond Beauty Parlour – where beauty meets elegance!\r\nLocated in the heart of Navanagar, Bagalkot (Sector 35), we offer a complete range of services including haircuts, facials, bridal makeup, waxing, threading, and skincare treatments – all in a clean, comfortable, and friendly atmosphere.\r\n\r\n💎 What makes us special? Our personal care, affordable pricing, and loyal customers who trust us for both everyday grooming and special occasions. Whether you're preparing for a wedding, a festive celebration, or just need a fresh look — we’re here to make you shine!\r\n💖 Step in for a transformation. Walk out with confidence!",
     "image": "uploads/IMG-20250718-WA0011.jpg",
     "image_url": "https://res.cloudinary.com/dgqm61eqb/image/upload/v1753015983/logos/logo_user1.jpg",
+    "country": "",
+    "state": "",
+    "district": "",
+    "town": "",
+    "address": "",
     "location": "Mailasandra Bengaluru",
     "phone": "6362905961",
+    "business_hours_start": null,
+    "business_hours_end": null,
     "timing": "9:00 am - 10:00 pm"
   }
 },
@@ -625,15 +1365,20 @@
   "model": "core.businessprofile",
   "pk": 5,
   "fields": {
-    "user": [
-      "userd"
-    ],
+    "user": 6,
     "business_name": "Diamond Rose Beauty Parlour",
     "description": "✨ Welcome to Diamond Beauty Parlour – where beauty meets elegance!\r\nLocated in the heart of Navanagar, Bagalkot (Sector 35), we offer a complete range of services including haircuts, facials, bridal makeup, waxing, threading, and skincare treatments – all in a clean, comfortable, and friendly atmosphere.\r\n\r\n💎 What makes us special? Our personal care, affordable pricing, and loyal customers who trust us for both everyday grooming and special occasions. Whether you're preparing for a wedding, a festive celebration, or just need a fresh look — we’re here to make you shine!\r\n💖 Step in for a transformation. Walk out with confidence!",
     "image": "uploads/1A382E00-BCA9-4CDC-B846-FBC6884C6144.jpeg",
     "image_url": "https://res.cloudinary.com/dgqm61eqb/image/upload/v1753015984/logos/logo_userd.jpg",
+    "country": "",
+    "state": "",
+    "district": "",
+    "town": "",
+    "address": "",
     "location": "Sector 35, Navanagar, Bagalkot",
     "phone": "+91 123456789",
+    "business_hours_start": null,
+    "business_hours_end": null,
     "timing": "11:00 AM to 8:00 PM11:00 AM to 8:00 PM"
   }
 },
@@ -641,15 +1386,20 @@
   "model": "core.businessprofile",
   "pk": 6,
   "fields": {
-    "user": [
-      "user2"
-    ],
+    "user": 7,
     "business_name": "TechFix Mobile Solutions",
     "description": "TechFix Mobile Solutions offers a wide range of smartphones from top brands and provides expert phone repair services. Whether you need a new device or a quick fix, we’re your trusted local tech partner. Quality service, genuine parts, and customer satisfaction set us apart.",
     "image": "uploads/87EB5873-B3F3-4F82-9E4D-4C0178A31422.jpeg",
     "image_url": "https://res.cloudinary.com/dgqm61eqb/image/upload/v1753035944/logos/logo_user2_befd73a5.jpg",
+    "country": "",
+    "state": "",
+    "district": "",
+    "town": "",
+    "address": "",
     "location": "sector 35 ,Navanagar, bagalkot",
     "phone": "6362905961",
+    "business_hours_start": null,
+    "business_hours_end": null,
     "timing": "11 AM - 8 PM"
   }
 },
@@ -657,15 +1407,20 @@
   "model": "core.businessprofile",
   "pk": 7,
   "fields": {
-    "user": [
-      "admin"
-    ],
+    "user": 4,
     "business_name": "mama mimi momo",
     "description": "We serve a delicious variety of momos to satisfy every craving!",
     "image": "",
     "image_url": "",
+    "country": "",
+    "state": "",
+    "district": "",
+    "town": "",
+    "address": "",
     "location": "Bengaluru",
-    "phone": "6362905961",
+    "phone": "6362905962",
+    "business_hours_start": null,
+    "business_hours_end": null,
     "timing": "10 am - 8 pm"
   }
 },
@@ -673,15 +1428,20 @@
   "model": "core.businessprofile",
   "pk": 9,
   "fields": {
-    "user": [
-      "Abhishek-PJ"
-    ],
+    "user": 10,
     "business_name": "Jai Shree Ram Kirani and General Stores",
     "description": "It s a general shop where you can get all day to day grocery items.",
     "image": "uploads/github.png",
     "image_url": "",
+    "country": "",
+    "state": "",
+    "district": "",
+    "town": "",
+    "address": "",
     "location": "Kengeri",
     "phone": "7483904062",
+    "business_hours_start": null,
+    "business_hours_end": null,
     "timing": "9:00 AM - 10:00 PM"
   }
 },
@@ -689,15 +1449,20 @@
   "model": "core.businessprofile",
   "pk": 10,
   "fields": {
-    "user": [
-      "vpriya"
-    ],
+    "user": 11,
     "business_name": "marriage broker business",
     "description": "We are a professional marriage brokerage service dedicated to helping individuals and families find suitable life partners through personalized matchmaking. Our platform combines traditional values with modern tools to ensure confidential, efficient, and compatible matches tailored to each client’s preferences",
     "image": "uploads/3D30DB79-DCC6-438A-A85F-271BAE58382C.jpeg",
     "image_url": "",
+    "country": "",
+    "state": "",
+    "district": "",
+    "town": "",
+    "address": "",
     "location": "Ballari",
     "phone": "123456789",
+    "business_hours_start": null,
+    "business_hours_end": null,
     "timing": "8 am - 11 pm"
   }
 },
@@ -705,15 +1470,20 @@
   "model": "core.businessprofile",
   "pk": 11,
   "fields": {
-    "user": [
-      "finall"
-    ],
+    "user": 12,
     "business_name": "TechFix Mobile Solutions",
     "description": "TechFix Mobile Solutions offers expert mobile phone repairs, accessories, and device upgrades. We specialize in fast, affordable fixes for all major brands—right at your doorstep or in-store.",
     "image": "",
     "image_url": "",
+    "country": "",
+    "state": "",
+    "district": "",
+    "town": "",
+    "address": "",
     "location": "Balaji Layout, Mailasandra, Bengaluru",
     "phone": "1123635689",
+    "business_hours_start": null,
+    "business_hours_end": null,
     "timing": "9:00 AM - 10:00 PM"
   }
 },
@@ -721,15 +1491,20 @@
   "model": "core.businessprofile",
   "pk": 12,
   "fields": {
-    "user": [
-      "Rajashekar"
-    ],
+    "user": 13,
     "business_name": "Rajshekhar crafts",
     "description": "Rajashekar Pottery is a family-run artisan workshop dedicated to preserving the timeless craft of traditional Indian pottery. Every piece is lovingly hand-molded from natural clay, blending age-old techniques with artistic elegance. From rustic cooking pots to decorative vases, our creations embody warmth, authenticity, and cultural heritage. With each pot, you don’t just take home an object—you carry a story shaped by hands, fire, and tradition.",
     "image": "",
     "image_url": "",
+    "country": "",
+    "state": "",
+    "district": "",
+    "town": "",
+    "address": "",
     "location": "sector 14, Ballari",
     "phone": "123456789",
+    "business_hours_start": null,
+    "business_hours_end": null,
     "timing": "9 am - 9 pm"
   }
 },
@@ -737,15 +1512,20 @@
   "model": "core.businessprofile",
   "pk": 13,
   "fields": {
-    "user": [
-      "user3"
-    ],
+    "user": 14,
     "business_name": "talikoti baji shop",
     "description": "We sell hot and tasty snacks like mirchi baji, batata baji, badanekai baji, and girmit. Our snacks are fresh, crispy, and very yummy. They smell good, taste great, and you will enjoy eating them with your friends and family.",
     "image": "",
     "image_url": "",
+    "country": "",
+    "state": "",
+    "district": "",
+    "town": "",
+    "address": "",
     "location": "navanagar, bagalkot",
     "phone": "6362905961",
+    "business_hours_start": null,
+    "business_hours_end": null,
     "timing": "4pm - 10pm"
   }
 },
@@ -753,15 +1533,20 @@
   "model": "core.businessprofile",
   "pk": 14,
   "fields": {
-    "user": [
-      "prema"
-    ],
+    "user": 15,
     "business_name": "Diamond Rose beauty parlour",
     "description": "Diamond Rose Beauty Parlour is your one-stop destination for enhancing beauty and confidence. We specialize in a wide range of professional beauty and grooming services including bridal makeovers, hairstyling, skincare treatments, facials, manicures, pedicures, and personalized makeup for every occasion.\r\n\r\nWhat makes us special is our commitment to quality and detail – we use premium products, modern techniques, and provide a relaxing atmosphere that makes every visit memorable. Whether it’s your big day, a festive celebration, or a self-care session, our skilled beauty experts ensure you leave looking radiant and feeling rejuvenated.\r\n\r\nAt Diamond Rose, we believe beauty is not just about appearance but also about how confident and happy you feel.",
     "image": "",
     "image_url": "",
+    "country": "",
+    "state": "",
+    "district": "",
+    "town": "",
+    "address": "",
     "location": "sector 35, Navanagar, Bagalkot",
     "phone": "9108614766",
+    "business_hours_start": null,
+    "business_hours_end": null,
     "timing": "11 am - 8 pm"
   }
 },
@@ -769,15 +1554,20 @@
   "model": "core.businessprofile",
   "pk": 15,
   "fields": {
-    "user": [
-      "a"
-    ],
+    "user": 16,
     "business_name": "TechPro Laptops",
     "description": "Expert laptop repair services\r\nScreen replacements, hardware upgrades, virus removal\r\nSoftware troubleshooting and data recovery\r\nSale of new laptops from top brands\r\nAffordable prices and reliable service\r\nFocus on quality and customer satisfaction",
     "image": "",
     "image_url": "",
+    "country": "",
+    "state": "",
+    "district": "",
+    "town": "",
+    "address": "",
     "location": "",
     "phone": "",
+    "business_hours_start": null,
+    "business_hours_end": null,
     "timing": ""
   }
 },
@@ -785,15 +1575,41 @@
   "model": "core.businessprofile",
   "pk": 16,
   "fields": {
-    "user": [
-      "feet.jpg"
-    ],
+    "user": 17,
     "business_name": "fetish pictures",
     "description": "we provide all kinds of feet pictures, any color black brown white or even any color of your choice of fetish pictures which make your day wonderful and energetic",
     "image": "",
     "image_url": "",
+    "country": "",
+    "state": "",
+    "district": "",
+    "town": "",
+    "address": "",
     "location": "",
     "phone": "",
+    "business_hours_start": null,
+    "business_hours_end": null,
+    "timing": ""
+  }
+},
+{
+  "model": "core.businessprofile",
+  "pk": 17,
+  "fields": {
+    "user": 18,
+    "business_name": "Omlette OMG",
+    "description": "Omlette OMG offers freshly prepared omelettes and quick meals, focused on quality ingredients, great taste, and fast service.",
+    "image": "",
+    "image_url": "",
+    "country": "India",
+    "state": "Karnataka",
+    "district": "Bagalkot",
+    "town": "Navanagar",
+    "address": "Plot 42C, Sector 8",
+    "location": "",
+    "phone": "6362905961",
+    "business_hours_start": "08:00:00",
+    "business_hours_end": "22:00:00",
     "timing": ""
   }
 },
@@ -801,9 +1617,7 @@
   "model": "core.searchhistory",
   "pk": 1,
   "fields": {
-    "user": [
-      "user2"
-    ],
+    "user": 7,
     "search_query": "ganapati festival off 50 %",
     "created_at": "2025-07-19T22:19:00.452Z"
   }
@@ -812,9 +1626,7 @@
   "model": "core.searchhistory",
   "pk": 2,
   "fields": {
-    "user": [
-      "user2"
-    ],
+    "user": 7,
     "search_query": "holi festival",
     "created_at": "2025-07-19T22:20:01.433Z"
   }
@@ -823,9 +1635,7 @@
   "model": "core.searchhistory",
   "pk": 3,
   "fields": {
-    "user": [
-      "user1"
-    ],
+    "user": 5,
     "search_query": "Amazon sale live!... Bring 2 people with you and get 50% discount",
     "created_at": "2025-07-20T02:11:14.831Z"
   }
@@ -834,9 +1644,7 @@
   "model": "core.searchhistory",
   "pk": 4,
   "fields": {
-    "user": [
-      "Abhishek-PJ"
-    ],
+    "user": 10,
     "search_query": "Birthday Offer",
     "created_at": "2025-07-20T14:21:10.178Z"
   }
@@ -845,9 +1653,7 @@
   "model": "core.postergeneration",
   "pk": 1,
   "fields": {
-    "user": [
-      "user1"
-    ],
+    "user": 5,
     "promotion_name": "Wonderful sale live💥",
     "offer_type": "New Year Special",
     "poster_url": "/media/942443d0-fd04-48f0-969f-4920e52f4735.png",
@@ -858,9 +1664,7 @@
   "model": "core.postergeneration",
   "pk": 2,
   "fields": {
-    "user": [
-      "Abhishek-PJ"
-    ],
+    "user": 10,
     "promotion_name": "Birthday offer",
     "offer_type": "25% OFF",
     "poster_url": "https://res.cloudinary.com/dgqm61eqb/image/upload/v1753021088/posters/poster_Abhishek-PJ_5551768b.png",
@@ -871,9 +1675,7 @@
   "model": "core.postergeneration",
   "pk": 3,
   "fields": {
-    "user": [
-      "user2"
-    ],
+    "user": 7,
     "promotion_name": "ganapati",
     "offer_type": "Flat ₹200 OFF",
     "poster_url": "https://res.cloudinary.com/dgqm61eqb/image/upload/v1753034733/posters/poster_user2_55d1f16b.png",
@@ -884,9 +1686,7 @@
   "model": "core.postergeneration",
   "pk": 4,
   "fields": {
-    "user": [
-      "user2"
-    ],
+    "user": 7,
     "promotion_name": "The Promo Planet",
     "offer_type": "Winter Special",
     "poster_url": "https://res.cloudinary.com/dgqm61eqb/image/upload/v1753036029/posters/poster_user2_1d7ed913.png",
@@ -897,9 +1697,7 @@
   "model": "core.postergeneration",
   "pk": 5,
   "fields": {
-    "user": [
-      "user2"
-    ],
+    "user": 7,
     "promotion_name": "The Promo Planet",
     "offer_type": "Winter Special",
     "poster_url": "https://res.cloudinary.com/dgqm61eqb/image/upload/v1753036095/posters/poster_user2_723fa5ef.png",
@@ -910,9 +1708,7 @@
   "model": "core.postergeneration",
   "pk": 6,
   "fields": {
-    "user": [
-      "user2"
-    ],
+    "user": 7,
     "promotion_name": "The Promo Planet",
     "offer_type": "Winter Special",
     "poster_url": "https://res.cloudinary.com/dgqm61eqb/image/upload/v1753036101/posters/poster_user2_6763b605.png",
@@ -923,9 +1719,7 @@
   "model": "core.postergeneration",
   "pk": 7,
   "fields": {
-    "user": [
-      "user2"
-    ],
+    "user": 7,
     "promotion_name": "the best ever",
     "offer_type": "Early Bird Offer",
     "poster_url": "https://res.cloudinary.com/dgqm61eqb/image/upload/v1753036856/posters/poster_user2_8077f431.png",
@@ -936,9 +1730,7 @@
   "model": "core.postergeneration",
   "pk": 8,
   "fields": {
-    "user": [
-      "user2"
-    ],
+    "user": 7,
     "promotion_name": "mama mimi momo",
     "offer_type": "Free Setup",
     "poster_url": "https://res.cloudinary.com/dgqm61eqb/image/upload/v1753037111/posters/poster_user2_16f400d1.png",
@@ -949,9 +1741,7 @@
   "model": "core.postergeneration",
   "pk": 9,
   "fields": {
-    "user": [
-      "user2"
-    ],
+    "user": 7,
     "promotion_name": "birthday offer",
     "offer_type": "Flat ₹500 OFF",
     "poster_url": "https://res.cloudinary.com/dgqm61eqb/image/upload/v1753114784/posters/poster_user2_8a1c8578.png",
@@ -962,9 +1752,7 @@
   "model": "core.postergeneration",
   "pk": 10,
   "fields": {
-    "user": [
-      "user2"
-    ],
+    "user": 7,
     "promotion_name": "birthday offer",
     "offer_type": "Flat ₹500 OFF",
     "poster_url": "https://res.cloudinary.com/dgqm61eqb/image/upload/v1753115355/posters/poster_user2_eb5533f7.png",
@@ -975,9 +1763,7 @@
   "model": "core.postergeneration",
   "pk": 11,
   "fields": {
-    "user": [
-      "vpriya"
-    ],
+    "user": 11,
     "promotion_name": "middle fingers offer",
     "offer_type": "Buy Two Get One Free",
     "poster_url": "https://res.cloudinary.com/dgqm61eqb/image/upload/v1753176723/posters/poster_vpriya_a178b418.png",
@@ -988,9 +1774,7 @@
   "model": "core.postergeneration",
   "pk": 12,
   "fields": {
-    "user": [
-      "vpriya"
-    ],
+    "user": 11,
     "promotion_name": "ಪುಸ್ತಕಗಳ ಕೊಡುಗೆ",
     "offer_type": "Holi Special",
     "poster_url": "https://res.cloudinary.com/dgqm61eqb/image/upload/v1753179370/posters/poster_vpriya_4a558f6d.png",
@@ -1001,9 +1785,7 @@
   "model": "core.postergeneration",
   "pk": 13,
   "fields": {
-    "user": [
-      "admin"
-    ],
+    "user": 4,
     "promotion_name": "deepawali",
     "offer_type": "25% OFF",
     "poster_url": "https://res.cloudinary.com/dgqm61eqb/image/upload/v1753193395/posters/poster_admin_5a52d136.png",
@@ -1014,9 +1796,7 @@
   "model": "core.postergeneration",
   "pk": 14,
   "fields": {
-    "user": [
-      "user2"
-    ],
+    "user": 7,
     "promotion_name": "black friday sale",
     "offer_type": "50% OFF",
     "poster_url": "https://res.cloudinary.com/dgqm61eqb/image/upload/v1753200207/posters/poster_user2_46eca14b.png",
@@ -1027,9 +1807,7 @@
   "model": "core.postergeneration",
   "pk": 15,
   "fields": {
-    "user": [
-      "user2"
-    ],
+    "user": 7,
     "promotion_name": "mega",
     "offer_type": "Buy One Get One Free",
     "poster_url": "https://res.cloudinary.com/dgqm61eqb/image/upload/v1753218762/posters/poster_user2_dbf251d9.png",
@@ -1040,9 +1818,7 @@
   "model": "core.postergeneration",
   "pk": 16,
   "fields": {
-    "user": [
-      "user2"
-    ],
+    "user": 7,
     "promotion_name": "mega",
     "offer_type": "Buy One Get One Free",
     "poster_url": "https://res.cloudinary.com/dgqm61eqb/image/upload/v1753218892/posters/poster_user2_a2981732.png",
@@ -1053,9 +1829,7 @@
   "model": "core.postergeneration",
   "pk": 17,
   "fields": {
-    "user": [
-      "user2"
-    ],
+    "user": 7,
     "promotion_name": "mega",
     "offer_type": "Buy One Get One Free",
     "poster_url": "https://res.cloudinary.com/dgqm61eqb/image/upload/v1753218941/posters/poster_user2_786bc5a2.png",
@@ -1066,9 +1840,7 @@
   "model": "core.postergeneration",
   "pk": 18,
   "fields": {
-    "user": [
-      "user2"
-    ],
+    "user": 7,
     "promotion_name": "live",
     "offer_type": "Senior Citizen Package",
     "poster_url": "https://res.cloudinary.com/dgqm61eqb/image/upload/v1753218967/posters/poster_user2_27b8ebad.png",
@@ -1079,9 +1851,7 @@
   "model": "core.postergeneration",
   "pk": 19,
   "fields": {
-    "user": [
-      "user2"
-    ],
+    "user": 7,
     "promotion_name": "epsion",
     "offer_type": "Flat ₹500 OFF",
     "poster_url": "https://res.cloudinary.com/dgqm61eqb/image/upload/v1753248317/posters/poster_user2_9502d364.png",
@@ -1092,9 +1862,7 @@
   "model": "core.postergeneration",
   "pk": 20,
   "fields": {
-    "user": [
-      "admin"
-    ],
+    "user": 4,
     "promotion_name": "epsilon",
     "offer_type": "Buy One Get 50% OFF",
     "poster_url": "https://res.cloudinary.com/dgqm61eqb/image/upload/v1753248941/posters/poster_admin_55aed369.png",
@@ -1105,9 +1873,7 @@
   "model": "core.postergeneration",
   "pk": 21,
   "fields": {
-    "user": [
-      "user2"
-    ],
+    "user": 7,
     "promotion_name": "dewali",
     "offer_type": "10% OFF",
     "poster_url": "https://res.cloudinary.com/dgqm61eqb/image/upload/v1753249546/posters/poster_user2_5b28156e.png",
@@ -1118,9 +1884,7 @@
   "model": "core.postergeneration",
   "pk": 22,
   "fields": {
-    "user": [
-      "admin"
-    ],
+    "user": 4,
     "promotion_name": "epsilon",
     "offer_type": "Flat ₹500 OFF",
     "poster_url": "https://res.cloudinary.com/dgqm61eqb/image/upload/v1753251209/posters/poster_admin_a50538e2.png",
@@ -1131,9 +1895,7 @@
   "model": "core.postergeneration",
   "pk": 23,
   "fields": {
-    "user": [
-      "admin"
-    ],
+    "user": 4,
     "promotion_name": "diwali",
     "offer_type": "Flat ₹500 OFF",
     "poster_url": "https://res.cloudinary.com/dgqm61eqb/image/upload/v1753251247/posters/poster_admin_353bcfde.png",
@@ -1144,9 +1906,7 @@
   "model": "core.postergeneration",
   "pk": 24,
   "fields": {
-    "user": [
-      "user2"
-    ],
+    "user": 7,
     "promotion_name": "diwali",
     "offer_type": "15% OFF",
     "poster_url": "https://res.cloudinary.com/dgqm61eqb/image/upload/v1753252072/posters/poster_user2_0dd990bb.png",
@@ -1157,9 +1917,7 @@
   "model": "core.postergeneration",
   "pk": 25,
   "fields": {
-    "user": [
-      "admin"
-    ],
+    "user": 4,
     "promotion_name": "deepwali",
     "offer_type": "20% OFF",
     "poster_url": "https://res.cloudinary.com/dgqm61eqb/image/upload/v1754728922/posters/poster_admin_6566dd51.png",
@@ -1170,9 +1928,7 @@
   "model": "core.postergeneration",
   "pk": 26,
   "fields": {
-    "user": [
-      "Rajashekar"
-    ],
+    "user": 13,
     "promotion_name": "Create a vibrant marketing poster for a traditional pottery artisan. Include the artisan’s name: ‘Rajashekar Pottery’, highlight the offer: ‘20% off on Handmade Clay Pots’, add a tagline: ‘From Clay to Culture – Bring Tradition Home’. Use warm earthy colors (terracotta, beige, brown), showcase hand-crafted pots and a cultural motif background. Keep it Instagram-ready with bold fonts and eye-catching visuals.",
     "offer_type": "Flat ₹300 OFF",
     "poster_url": "https://res.cloudinary.com/dgqm61eqb/image/upload/v1754729012/posters/poster_Rajashekar_10b35d4f.png",
@@ -1183,9 +1939,7 @@
   "model": "core.postergeneration",
   "pk": 27,
   "fields": {
-    "user": [
-      "Rajashekar"
-    ],
+    "user": 13,
     "promotion_name": "Create a vibrant marketing poster for a traditional pottery artisan. Include the artisan’s name: ‘Rajashekar Pottery’, highlight the offer: ‘20% off on Handmade Clay Pots’, add a tagline: ‘From Clay to Culture – Bring Tradition Home’. Use warm earthy colors (terracotta, beige, brown), showcase hand-crafted pots and a cultural motif background. Keep it Instagram-ready with bold fonts and eye-catching visuals.",
     "offer_type": "10% OFF",
     "poster_url": "https://res.cloudinary.com/dgqm61eqb/image/upload/v1754729227/posters/poster_Rajashekar_c3220907.png",
@@ -1196,9 +1950,7 @@
   "model": "core.postergeneration",
   "pk": 28,
   "fields": {
-    "user": [
-      "Rajashekar"
-    ],
+    "user": 13,
     "promotion_name": "Create a vibrant marketing poster for a traditional pottery artisan. Include the artisan’s name: ‘Rajashekar Pottery’, highlight the offer: ‘20% off on Handmade Clay Pots’, add a tagline: ‘From Clay to Culture – Bring Tradition Home’. Use warm earthy colors (terracotta, beige, brown), showcase hand-crafted pots and a cultural motif background. Keep it Instagram-ready with bold fonts and eye-catching visuals.",
     "offer_type": "20% OFF",
     "poster_url": "https://res.cloudinary.com/dgqm61eqb/image/upload/v1754741737/posters/poster_Rajashekar_b470b334.png",
@@ -1209,9 +1961,7 @@
   "model": "core.postergeneration",
   "pk": 29,
   "fields": {
-    "user": [
-      "user2"
-    ],
+    "user": 7,
     "promotion_name": "raksha bandhan",
     "offer_type": "40% OFF",
     "poster_url": "https://res.cloudinary.com/dgqm61eqb/image/upload/v1754832510/posters/poster_user2_d73d9ef0.png",
@@ -1222,9 +1972,7 @@
   "model": "core.postergeneration",
   "pk": 30,
   "fields": {
-    "user": [
-      "user2"
-    ],
+    "user": 7,
     "promotion_name": "romance",
     "offer_type": "Flat ₹200 OFF",
     "poster_url": "https://res.cloudinary.com/dgqm61eqb/image/upload/v1754832619/posters/poster_user2_da9fcf29.png",
@@ -1235,9 +1983,7 @@
   "model": "core.postergeneration",
   "pk": 31,
   "fields": {
-    "user": [
-      "user3"
-    ],
+    "user": 14,
     "promotion_name": "A close-up, top-down shot of a vibrant platter showcasing a freshly fried assortment of 'talikoti baji shop' snacks: golden-brown Mirchi Baji, perfectly crispy Batati Baji, and soft, flavorful Badanekai Baji. Each piece should have visible, appealing textures – the slight crisp of the batter, the soft inside. Accompanying them is a small bowl of colorful, appetizing Girmit, perhaps with a sprinkle of fresh coriander. The lighting should be warm and inviting, highlighting the steam subtly rising from the hot snacks. The background should be slightly blurred to keep the focus on the food, perhaps a rustic, clean tabletop. The overall feel should be incredibly tempting, making viewers crave these 'very testy and mouth watery' snacks instantly. High-resolution, food photography style.",
     "offer_type": "30% OFF",
     "poster_url": "https://res.cloudinary.com/dgqm61eqb/image/upload/v1754850721/posters/poster_user3_0299119e.png",
@@ -1248,9 +1994,7 @@
   "model": "core.postergeneration",
   "pk": 32,
   "fields": {
-    "user": [
-      "user3"
-    ],
+    "user": 14,
     "promotion_name": "deepawali",
     "offer_type": "Flat ₹500 OFF",
     "poster_url": "https://res.cloudinary.com/dgqm61eqb/image/upload/v1754850816/posters/poster_user3_dd0a3bdc.png",
@@ -1261,9 +2005,7 @@
   "model": "core.postergeneration",
   "pk": 33,
   "fields": {
-    "user": [
-      "user3"
-    ],
+    "user": 14,
     "promotion_name": "free food",
     "offer_type": "Grand Opening",
     "poster_url": "https://res.cloudinary.com/dgqm61eqb/image/upload/v1754851492/posters/poster_user3_ce68ad6a.png",
@@ -1274,9 +2016,7 @@
   "model": "core.postergeneration",
   "pk": 34,
   "fields": {
-    "user": [
-      "user3"
-    ],
+    "user": 14,
     "promotion_name": "Anniversay Sale",
     "offer_type": "50% OFF",
     "poster_url": "https://res.cloudinary.com/dgqm61eqb/image/upload/v1754854619/posters/poster_user3_b9f103ff.png",
@@ -1287,9 +2027,7 @@
   "model": "core.postergeneration",
   "pk": 35,
   "fields": {
-    "user": [
-      "user3"
-    ],
+    "user": 14,
     "promotion_name": "Anniversary Sale",
     "offer_type": "50% OFF",
     "poster_url": "https://res.cloudinary.com/dgqm61eqb/image/upload/v1754854856/posters/poster_user3_8636c6aa.png",
@@ -1300,9 +2038,7 @@
   "model": "core.postergeneration",
   "pk": 36,
   "fields": {
-    "user": [
-      "user3"
-    ],
+    "user": 14,
     "promotion_name": "Anniversary Sale",
     "offer_type": "50% OFF",
     "poster_url": "https://res.cloudinary.com/dgqm61eqb/image/upload/v1754855043/posters/poster_user3_172ea55d.png",
@@ -1313,9 +2049,7 @@
   "model": "core.postergeneration",
   "pk": 37,
   "fields": {
-    "user": [
-      "Rajashekar"
-    ],
+    "user": 13,
     "promotion_name": "deepawali",
     "offer_type": "Buy One Get One Free",
     "poster_url": "https://res.cloudinary.com/dgqm61eqb/image/upload/v1755162711/posters/poster_Rajashekar_ef194e64.png",
@@ -1326,9 +2060,7 @@
   "model": "core.postergeneration",
   "pk": 38,
   "fields": {
-    "user": [
-      "user1"
-    ],
+    "user": 5,
     "promotion_name": "ganapati festival",
     "offer_type": "Flat ₹500 OFF",
     "poster_url": "https://res.cloudinary.com/dgqm61eqb/image/upload/v1755163321/posters/poster_user1_8c48a065.png",
@@ -1339,9 +2071,7 @@
   "model": "core.postergeneration",
   "pk": 39,
   "fields": {
-    "user": [
-      "Rajashekar"
-    ],
+    "user": 13,
     "promotion_name": "New Year, New Sparkle Sale!",
     "offer_type": "Buy One Get One Free",
     "poster_url": "https://res.cloudinary.com/dgqm61eqb/image/upload/v1755264811/posters/poster_Rajashekar_3c2cfe4e.png",
@@ -1352,9 +2082,7 @@
   "model": "core.postergeneration",
   "pk": 40,
   "fields": {
-    "user": [
-      "Rajashekar"
-    ],
+    "user": 13,
     "promotion_name": "New Year, New Sparkle Sale!",
     "offer_type": "Buy One Get One Free",
     "poster_url": "https://res.cloudinary.com/dgqm61eqb/image/upload/v1755265999/posters/poster_Rajashekar_f2301b78.png",
@@ -1365,9 +2093,7 @@
   "model": "core.postergeneration",
   "pk": 41,
   "fields": {
-    "user": [
-      "Rajashekar"
-    ],
+    "user": 13,
     "promotion_name": "New Year, New Sparkle Sale!",
     "offer_type": "Buy Two Get One Free",
     "poster_url": "https://res.cloudinary.com/dgqm61eqb/image/upload/v1755266159/posters/poster_Rajashekar_beb6c102.png",
@@ -1378,9 +2104,7 @@
   "model": "core.postergeneration",
   "pk": 42,
   "fields": {
-    "user": [
-      "Rajashekar"
-    ],
+    "user": 13,
     "promotion_name": "New Year, New Sparkle Sale!",
     "offer_type": "Buy Two Get One Free",
     "poster_url": "https://res.cloudinary.com/dgqm61eqb/image/upload/v1755266385/posters/poster_Rajashekar_60e7df45.png",
@@ -1391,9 +2115,7 @@
   "model": "core.postergeneration",
   "pk": 43,
   "fields": {
-    "user": [
-      "Rajashekar"
-    ],
+    "user": 13,
     "promotion_name": "New year, New sparkle sale!",
     "offer_type": "Buy Two Get One Free",
     "poster_url": "https://res.cloudinary.com/dgqm61eqb/image/upload/v1755266597/posters/poster_Rajashekar_70092082.png",
@@ -1404,9 +2126,7 @@
   "model": "core.postergeneration",
   "pk": 44,
   "fields": {
-    "user": [
-      "user2"
-    ],
+    "user": 7,
     "promotion_name": "Vibrant tech gadgets",
     "offer_type": "Free Trial",
     "poster_url": "https://res.cloudinary.com/dgqm61eqb/image/upload/v1755611232/posters/poster_user2_f4b98d8b.png",
@@ -1417,9 +2137,7 @@
   "model": "core.postergeneration",
   "pk": 45,
   "fields": {
-    "user": [
-      "prema"
-    ],
+    "user": 15,
     "promotion_name": "Party Perfect Makeover",
     "offer_type": "20% off all facials",
     "poster_url": "https://res.cloudinary.com/dgqm61eqb/image/upload/v1755611817/posters/poster_prema_9f0c7ab7.png",
@@ -1430,9 +2148,7 @@
   "model": "core.postergeneration",
   "pk": 46,
   "fields": {
-    "user": [
-      "prema"
-    ],
+    "user": 15,
     "promotion_name": "Party Perfect Makeover",
     "offer_type": "20% off all facials",
     "poster_url": "https://res.cloudinary.com/dgqm61eqb/image/upload/v1755612126/posters/poster_prema_852a0655.png",
@@ -1443,9 +2159,7 @@
   "model": "core.postergeneration",
   "pk": 47,
   "fields": {
-    "user": [
-      "prema"
-    ],
+    "user": 15,
     "promotion_name": "Party Perfect Makeover",
     "offer_type": "20% off all facials",
     "poster_url": "https://res.cloudinary.com/dgqm61eqb/image/upload/v1755612213/posters/poster_prema_4a652cb4.png",
@@ -1456,9 +2170,7 @@
   "model": "core.postergeneration",
   "pk": 48,
   "fields": {
-    "user": [
-      "Rajashekar"
-    ],
+    "user": 13,
     "promotion_name": "Ganapati festival",
     "offer_type": "Flat ₹500 OFF",
     "poster_url": "https://res.cloudinary.com/dgqm61eqb/image/upload/v1756752060/posters/poster_Rajashekar_ba727790.png",
@@ -1469,9 +2181,7 @@
   "model": "core.postergeneration",
   "pk": 49,
   "fields": {
-    "user": [
-      "Rajashekar"
-    ],
+    "user": 13,
     "promotion_name": "Ganapati sale",
     "offer_type": "Buy One Get One Free",
     "poster_url": "https://res.cloudinary.com/dgqm61eqb/image/upload/v1756752163/posters/poster_Rajashekar_97a4aee9.png",
@@ -1482,9 +2192,7 @@
   "model": "core.postergeneration",
   "pk": 50,
   "fields": {
-    "user": [
-      "prema"
-    ],
+    "user": 15,
     "promotion_name": "Ganapati statues sale",
     "offer_type": "Buy One Get One Free",
     "poster_url": "https://res.cloudinary.com/dgqm61eqb/image/upload/v1756752500/posters/poster_prema_f50a5bbf.png",
@@ -1495,9 +2203,7 @@
   "model": "core.postergeneration",
   "pk": 51,
   "fields": {
-    "user": [
-      "prema"
-    ],
+    "user": 15,
     "promotion_name": "Ganapati statues sale",
     "offer_type": "Buy One Get One Free",
     "poster_url": "https://res.cloudinary.com/dgqm61eqb/image/upload/v1756752595/posters/poster_prema_a4f6e008.png",
@@ -1508,9 +2214,7 @@
   "model": "core.postergeneration",
   "pk": 52,
   "fields": {
-    "user": [
-      "prema"
-    ],
+    "user": 15,
     "promotion_name": "Deepawali",
     "offer_type": "30% OFF",
     "poster_url": "https://res.cloudinary.com/dgqm61eqb/image/upload/v1758792380/posters/poster_prema_93542799.png",
@@ -1521,9 +2225,7 @@
   "model": "core.postergeneration",
   "pk": 53,
   "fields": {
-    "user": [
-      "prema"
-    ],
+    "user": 15,
     "promotion_name": "Deepwali",
     "offer_type": "30% OFF",
     "poster_url": "https://res.cloudinary.com/dgqm61eqb/image/upload/v1758792493/posters/poster_prema_5188e891.png",
@@ -1534,9 +2236,7 @@
   "model": "core.postergeneration",
   "pk": 54,
   "fields": {
-    "user": [
-      "prema"
-    ],
+    "user": 15,
     "promotion_name": "Deepawali",
     "offer_type": "40% OFF",
     "poster_url": "https://res.cloudinary.com/dgqm61eqb/image/upload/v1758792629/posters/poster_prema_e6148fc9.png",
@@ -1547,9 +2247,7 @@
   "model": "core.postergeneration",
   "pk": 55,
   "fields": {
-    "user": [
-      "Rajashekar"
-    ],
+    "user": 13,
     "promotion_name": "Deepwali",
     "offer_type": "Flat ₹500 OFF",
     "poster_url": "https://res.cloudinary.com/dgqm61eqb/image/upload/v1758795832/posters/poster_Rajashekar_9458ef46.png",
@@ -1560,9 +2258,7 @@
   "model": "core.postergeneration",
   "pk": 56,
   "fields": {
-    "user": [
-      "Rajashekar"
-    ],
+    "user": 13,
     "promotion_name": "Deepawali",
     "offer_type": "25% OFF",
     "poster_url": "https://res.cloudinary.com/dgqm61eqb/image/upload/v1758798503/posters/poster_Rajashekar_0274c94b.png",
@@ -1573,9 +2269,7 @@
   "model": "core.postergeneration",
   "pk": 57,
   "fields": {
-    "user": [
-      "prema"
-    ],
+    "user": 15,
     "promotion_name": "Dasara & Deepawali Grooming Offer",
     "offer_type": "Haircut, Facial, Bleach, Spa, Colour & Wax",
     "poster_url": "https://res.cloudinary.com/dgqm61eqb/image/upload/v1758806775/posters/poster_prema_183fc662.png",
@@ -1586,9 +2280,7 @@
   "model": "core.postergeneration",
   "pk": 58,
   "fields": {
-    "user": [
-      "prema"
-    ],
+    "user": 15,
     "promotion_name": "Dasara & Deepawali Grooming Offer",
     "offer_type": "Haircut, Facial, Bleach, Spa, Colour & Wax",
     "poster_url": "https://res.cloudinary.com/dgqm61eqb/image/upload/v1758806918/posters/poster_prema_b3c54bd0.png",
@@ -1599,9 +2291,7 @@
   "model": "core.postergeneration",
   "pk": 59,
   "fields": {
-    "user": [
-      "prema"
-    ],
+    "user": 15,
     "promotion_name": "Dasara & Deepawali Offer",
     "offer_type": "Haircut, Facial, Bleach, Spa, Colour & Wax",
     "poster_url": "https://res.cloudinary.com/dgqm61eqb/image/upload/v1758807144/posters/poster_prema_d8c8c0ba.png",
@@ -1612,9 +2302,7 @@
   "model": "core.postergeneration",
   "pk": 60,
   "fields": {
-    "user": [
-      "prema"
-    ],
+    "user": 15,
     "promotion_name": "Dasara & Deepawali Grooming Offer",
     "offer_type": "Haircut, Facial, Bleach, Spa, Colour & Wax",
     "poster_url": "https://res.cloudinary.com/dgqm61eqb/image/upload/v1758807250/posters/poster_prema_31b06039.png",
@@ -1625,9 +2313,7 @@
   "model": "core.postergeneration",
   "pk": 61,
   "fields": {
-    "user": [
-      "prema"
-    ],
+    "user": 15,
     "promotion_name": "Deepawali",
     "offer_type": "Premium Package",
     "poster_url": "https://res.cloudinary.com/dgqm61eqb/image/upload/v1759038799/posters/poster_prema_2428e8d5.png",
@@ -1638,9 +2324,7 @@
   "model": "core.postergeneration",
   "pk": 62,
   "fields": {
-    "user": [
-      "Rajashekar"
-    ],
+    "user": 13,
     "promotion_name": "Deepawali",
     "offer_type": "Flat ₹500 OFF",
     "poster_url": "https://res.cloudinary.com/dgqm61eqb/image/upload/v1759039090/posters/poster_Rajashekar_38d2eb69.png",
@@ -1651,9 +2335,7 @@
   "model": "core.postergeneration",
   "pk": 63,
   "fields": {
-    "user": [
-      "Rajashekar"
-    ],
+    "user": 13,
     "promotion_name": "Deepawali",
     "offer_type": "Free Trial",
     "poster_url": "https://res.cloudinary.com/dgqm61eqb/image/upload/v1760001972/posters/poster_Rajashekar_1519dd0d.png",
@@ -1664,9 +2346,7 @@
   "model": "core.postergeneration",
   "pk": 64,
   "fields": {
-    "user": [
-      "Rajashekar"
-    ],
+    "user": 13,
     "promotion_name": "Deepawali",
     "offer_type": "Flat ₹500 OFF",
     "poster_url": "https://res.cloudinary.com/dgqm61eqb/image/upload/v1760043491/posters/poster_Rajashekar_aa9e6cd3.png",
@@ -1677,9 +2357,7 @@
   "model": "core.postergeneration",
   "pk": 65,
   "fields": {
-    "user": [
-      "abhishek"
-    ],
+    "user": 2,
     "promotion_name": "Deepawali",
     "offer_type": "Grand Opening",
     "poster_url": "https://res.cloudinary.com/dgqm61eqb/image/upload/v1760044575/posters/poster_abhishek_e7a97dcf.png",
@@ -1690,9 +2368,7 @@
   "model": "core.postergeneration",
   "pk": 66,
   "fields": {
-    "user": [
-      "a"
-    ],
+    "user": 16,
     "promotion_name": "Deepawali",
     "offer_type": "Free Setup",
     "poster_url": "https://res.cloudinary.com/dgqm61eqb/image/upload/v1760045725/posters/poster_a_24d7bea4.png",
@@ -1703,9 +2379,7 @@
   "model": "core.postergeneration",
   "pk": 67,
   "fields": {
-    "user": [
-      "user2"
-    ],
+    "user": 7,
     "promotion_name": "Deepawali",
     "offer_type": "Anniversary Sale",
     "poster_url": "https://res.cloudinary.com/dgqm61eqb/image/upload/v1760117688/posters/poster_user2_8b23db0c.png",
@@ -1716,9 +2390,7 @@
   "model": "core.postergeneration",
   "pk": 68,
   "fields": {
-    "user": [
-      "userd"
-    ],
+    "user": 6,
     "promotion_name": "What_Ma....!",
     "offer_type": "Student Package",
     "poster_url": "https://res.cloudinary.com/dgqm61eqb/image/upload/v1760438729/posters/poster_userd_61d2d84c.png",
@@ -1729,9 +2401,7 @@
   "model": "core.postergeneration",
   "pk": 69,
   "fields": {
-    "user": [
-      "userd"
-    ],
+    "user": 6,
     "promotion_name": "What_Ma.....!!!",
     "offer_type": "Student Package",
     "poster_url": "https://res.cloudinary.com/dgqm61eqb/image/upload/v1760439034/posters/poster_userd_e4b8fd82.png",
@@ -1742,9 +2412,7 @@
   "model": "core.postergeneration",
   "pk": 70,
   "fields": {
-    "user": [
-      "feet.jpg"
-    ],
+    "user": 17,
     "promotion_name": "What_Ma.....!!!",
     "offer_type": "10% OFF",
     "poster_url": "https://res.cloudinary.com/dgqm61eqb/image/upload/v1760439338/posters/poster_feet.jpg_9cdc21c3.png",
@@ -1755,9 +2423,7 @@
   "model": "core.postergeneration",
   "pk": 71,
   "fields": {
-    "user": [
-      "admin"
-    ],
+    "user": 4,
     "promotion_name": "new year",
     "offer_type": "Buy Two Get One Free",
     "poster_url": "https://res.cloudinary.com/dgqm61eqb/image/upload/v1761304794/posters/poster_admin_93a4e21b.png",
@@ -1768,9 +2434,7 @@
   "model": "core.postergeneration",
   "pk": 72,
   "fields": {
-    "user": [
-      "admin"
-    ],
+    "user": 4,
     "promotion_name": "deepawali",
     "offer_type": "Buy Two Get One Free",
     "poster_url": "https://res.cloudinary.com/dgqm61eqb/image/upload/v1761305286/posters/poster_admin_33879a3c.png",
@@ -1781,9 +2445,7 @@
   "model": "core.postergeneration",
   "pk": 73,
   "fields": {
-    "user": [
-      "admin"
-    ],
+    "user": 4,
     "promotion_name": "Yugadi",
     "offer_type": "Flat ₹300 OFF",
     "poster_url": "https://res.cloudinary.com/dgqm61eqb/image/upload/v1769356240/posters/poster_admin_8369d05a.png",
@@ -1794,13 +2456,66 @@
   "model": "core.postergeneration",
   "pk": 74,
   "fields": {
-    "user": [
-      "finall"
-    ],
+    "user": 12,
     "promotion_name": "Yugadi",
     "offer_type": "10% OFF on any repair",
     "poster_url": "https://res.cloudinary.com/dgqm61eqb/image/upload/v1769368118/posters/poster_finall_cbf7f3ce.png",
     "created_at": "2026-01-25T19:08:40.412Z"
+  }
+},
+{
+  "model": "core.postergeneration",
+  "pk": 75,
+  "fields": {
+    "user": 18,
+    "promotion_name": "New Year",
+    "offer_type": "Buy Two Get One Free",
+    "poster_url": "https://res.cloudinary.com/dgqm61eqb/image/upload/v1769376067/posters/poster_cmy_acb1973a.png",
+    "created_at": "2026-01-25T21:21:08.686Z"
+  }
+},
+{
+  "model": "core.postergeneration",
+  "pk": 76,
+  "fields": {
+    "user": 18,
+    "promotion_name": "Fresh Start Feast",
+    "offer_type": "Buy Two Get One Free",
+    "poster_url": "https://res.cloudinary.com/dgqm61eqb/image/upload/v1769379025/posters/poster_cmy_4acdbda0.png",
+    "created_at": "2026-01-25T22:10:27.018Z"
+  }
+},
+{
+  "model": "core.postergeneration",
+  "pk": 77,
+  "fields": {
+    "user": 18,
+    "promotion_name": "Craze for Omelettes",
+    "offer_type": "Buy Two Get One Free",
+    "poster_url": "https://res.cloudinary.com/dgqm61eqb/image/upload/v1769379683/posters/poster_cmy_59e66da6.png",
+    "created_at": "2026-01-25T22:21:25.069Z"
+  }
+},
+{
+  "model": "core.postergeneration",
+  "pk": 78,
+  "fields": {
+    "user": 13,
+    "promotion_name": "Yugadi",
+    "offer_type": "Flat ₹300 OFF",
+    "poster_url": "https://res.cloudinary.com/dgqm61eqb/image/upload/v1769379899/posters/poster_Rajashekar_42e12062.png",
+    "created_at": "2026-01-25T22:25:01.571Z"
+  }
+},
+{
+  "model": "core.postergeneration",
+  "pk": 79,
+  "fields": {
+    "user": 13,
+    "promotion_name": "Yugadi",
+    "offer_type": "Flat ₹300 OFF",
+    "poster_url": "https://res.cloudinary.com/dgqm61eqb/image/upload/v1769380013/posters/poster_Rajashekar_2863bc31.png",
+    "created_at": "2026-01-25T22:26:54.593Z"
   }
 },
 {
@@ -1879,9 +2594,7 @@
   "model": "core.userhistory",
   "pk": 1,
   "fields": {
-    "user": [
-      "user2"
-    ],
+    "user": 7,
     "action_type": "text_generation",
     "input_data": {
       "user_input": "ganapati festival off 50 %",
@@ -1897,9 +2610,7 @@
   "model": "core.userhistory",
   "pk": 2,
   "fields": {
-    "user": [
-      "Abhishek-PJ"
-    ],
+    "user": 10,
     "action_type": "poster_generation",
     "input_data": {
       "promotion_name": "Birthday offer",
@@ -1919,9 +2630,7 @@
   "model": "core.userhistory",
   "pk": 3,
   "fields": {
-    "user": [
-      "Abhishek-PJ"
-    ],
+    "user": 10,
     "action_type": "text_generation",
     "input_data": {
       "user_input": "Birthday Offer",
@@ -1937,9 +2646,7 @@
   "model": "core.userhistory",
   "pk": 4,
   "fields": {
-    "user": [
-      "Abhishek-PJ"
-    ],
+    "user": 10,
     "action_type": "text_generation",
     "input_data": {
       "user_input": "Birthday Offer",
@@ -1955,9 +2662,7 @@
   "model": "core.userhistory",
   "pk": 5,
   "fields": {
-    "user": [
-      "user2"
-    ],
+    "user": 7,
     "action_type": "poster_generation",
     "input_data": {
       "promotion_name": "ganapati",
@@ -1977,9 +2682,7 @@
   "model": "core.userhistory",
   "pk": 6,
   "fields": {
-    "user": [
-      "user2"
-    ],
+    "user": 7,
     "action_type": "text_generation",
     "input_data": {
       "user_input": "",
@@ -1995,9 +2698,7 @@
   "model": "core.userhistory",
   "pk": 7,
   "fields": {
-    "user": [
-      "user2"
-    ],
+    "user": 7,
     "action_type": "logo_upload",
     "input_data": {
       "filename": "87EB5873-B3F3-4F82-9E4D-4C0178A31422.jpeg",
@@ -2013,9 +2714,7 @@
   "model": "core.userhistory",
   "pk": 8,
   "fields": {
-    "user": [
-      "user2"
-    ],
+    "user": 7,
     "action_type": "poster_generation",
     "input_data": {
       "promotion_name": "The Promo Planet",
@@ -2035,9 +2734,7 @@
   "model": "core.userhistory",
   "pk": 9,
   "fields": {
-    "user": [
-      "user2"
-    ],
+    "user": 7,
     "action_type": "poster_generation",
     "input_data": {
       "promotion_name": "The Promo Planet",
@@ -2057,9 +2754,7 @@
   "model": "core.userhistory",
   "pk": 10,
   "fields": {
-    "user": [
-      "user2"
-    ],
+    "user": 7,
     "action_type": "poster_generation",
     "input_data": {
       "promotion_name": "The Promo Planet",
@@ -2079,9 +2774,7 @@
   "model": "core.userhistory",
   "pk": 11,
   "fields": {
-    "user": [
-      "user2"
-    ],
+    "user": 7,
     "action_type": "poster_generation",
     "input_data": {
       "promotion_name": "the best ever",
@@ -2101,9 +2794,7 @@
   "model": "core.userhistory",
   "pk": 12,
   "fields": {
-    "user": [
-      "user2"
-    ],
+    "user": 7,
     "action_type": "poster_generation",
     "input_data": {
       "promotion_name": "mama mimi momo",
@@ -2123,9 +2814,7 @@
   "model": "core.userhistory",
   "pk": 13,
   "fields": {
-    "user": [
-      "user2"
-    ],
+    "user": 7,
     "action_type": "poster_generation",
     "input_data": {
       "promotion_name": "birthday offer",
@@ -2145,9 +2834,7 @@
   "model": "core.userhistory",
   "pk": 14,
   "fields": {
-    "user": [
-      "user2"
-    ],
+    "user": 7,
     "action_type": "poster_generation",
     "input_data": {
       "promotion_name": "birthday offer",
@@ -2167,9 +2854,7 @@
   "model": "core.userhistory",
   "pk": 15,
   "fields": {
-    "user": [
-      "user2"
-    ],
+    "user": 7,
     "action_type": "text_generation",
     "input_data": {
       "user_input": "",
@@ -2185,9 +2870,7 @@
   "model": "core.userhistory",
   "pk": 16,
   "fields": {
-    "user": [
-      "vpriya"
-    ],
+    "user": 11,
     "action_type": "poster_generation",
     "input_data": {
       "promotion_name": "middle fingers offer",
@@ -2207,9 +2890,7 @@
   "model": "core.userhistory",
   "pk": 17,
   "fields": {
-    "user": [
-      "vpriya"
-    ],
+    "user": 11,
     "action_type": "text_generation",
     "input_data": {
       "user_input": "",
@@ -2225,9 +2906,7 @@
   "model": "core.userhistory",
   "pk": 18,
   "fields": {
-    "user": [
-      "vpriya"
-    ],
+    "user": 11,
     "action_type": "text_generation",
     "input_data": {
       "user_input": "",
@@ -2243,9 +2922,7 @@
   "model": "core.userhistory",
   "pk": 19,
   "fields": {
-    "user": [
-      "vpriya"
-    ],
+    "user": 11,
     "action_type": "poster_generation",
     "input_data": {
       "promotion_name": "ಪುಸ್ತಕಗಳ ಕೊಡುಗೆ",
@@ -2265,9 +2942,7 @@
   "model": "core.userhistory",
   "pk": 20,
   "fields": {
-    "user": [
-      "admin"
-    ],
+    "user": 4,
     "action_type": "poster_generation",
     "input_data": {
       "promotion_name": "deepawali",
@@ -2287,9 +2962,7 @@
   "model": "core.userhistory",
   "pk": 21,
   "fields": {
-    "user": [
-      "user2"
-    ],
+    "user": 7,
     "action_type": "text_generation",
     "input_data": {
       "user_input": "",
@@ -2305,9 +2978,7 @@
   "model": "core.userhistory",
   "pk": 22,
   "fields": {
-    "user": [
-      "user2"
-    ],
+    "user": 7,
     "action_type": "poster_generation",
     "input_data": {
       "promotion_name": "black friday sale",
@@ -2327,9 +2998,7 @@
   "model": "core.userhistory",
   "pk": 23,
   "fields": {
-    "user": [
-      "user2"
-    ],
+    "user": 7,
     "action_type": "poster_generation",
     "input_data": {
       "promotion_name": "mega",
@@ -2349,9 +3018,7 @@
   "model": "core.userhistory",
   "pk": 24,
   "fields": {
-    "user": [
-      "user2"
-    ],
+    "user": 7,
     "action_type": "poster_generation",
     "input_data": {
       "promotion_name": "mega",
@@ -2371,9 +3038,7 @@
   "model": "core.userhistory",
   "pk": 25,
   "fields": {
-    "user": [
-      "user2"
-    ],
+    "user": 7,
     "action_type": "poster_generation",
     "input_data": {
       "promotion_name": "mega",
@@ -2393,9 +3058,7 @@
   "model": "core.userhistory",
   "pk": 26,
   "fields": {
-    "user": [
-      "user2"
-    ],
+    "user": 7,
     "action_type": "poster_generation",
     "input_data": {
       "promotion_name": "live",
@@ -2415,9 +3078,7 @@
   "model": "core.userhistory",
   "pk": 27,
   "fields": {
-    "user": [
-      "user2"
-    ],
+    "user": 7,
     "action_type": "text_generation",
     "input_data": {
       "user_input": "",
@@ -2433,9 +3094,7 @@
   "model": "core.userhistory",
   "pk": 28,
   "fields": {
-    "user": [
-      "user2"
-    ],
+    "user": 7,
     "action_type": "poster_generation",
     "input_data": {
       "promotion_name": "epsion",
@@ -2455,9 +3114,7 @@
   "model": "core.userhistory",
   "pk": 29,
   "fields": {
-    "user": [
-      "admin"
-    ],
+    "user": 4,
     "action_type": "poster_generation",
     "input_data": {
       "promotion_name": "epsilon",
@@ -2477,9 +3134,7 @@
   "model": "core.userhistory",
   "pk": 30,
   "fields": {
-    "user": [
-      "user2"
-    ],
+    "user": 7,
     "action_type": "poster_generation",
     "input_data": {
       "promotion_name": "dewali",
@@ -2499,9 +3154,7 @@
   "model": "core.userhistory",
   "pk": 31,
   "fields": {
-    "user": [
-      "user2"
-    ],
+    "user": 7,
     "action_type": "text_generation",
     "input_data": {
       "user_input": "",
@@ -2517,9 +3170,7 @@
   "model": "core.userhistory",
   "pk": 32,
   "fields": {
-    "user": [
-      "admin"
-    ],
+    "user": 4,
     "action_type": "poster_generation",
     "input_data": {
       "promotion_name": "epsilon",
@@ -2539,9 +3190,7 @@
   "model": "core.userhistory",
   "pk": 33,
   "fields": {
-    "user": [
-      "admin"
-    ],
+    "user": 4,
     "action_type": "poster_generation",
     "input_data": {
       "promotion_name": "diwali",
@@ -2561,9 +3210,7 @@
   "model": "core.userhistory",
   "pk": 34,
   "fields": {
-    "user": [
-      "user2"
-    ],
+    "user": 7,
     "action_type": "text_generation",
     "input_data": {
       "user_input": "",
@@ -2579,9 +3226,7 @@
   "model": "core.userhistory",
   "pk": 35,
   "fields": {
-    "user": [
-      "user2"
-    ],
+    "user": 7,
     "action_type": "poster_generation",
     "input_data": {
       "promotion_name": "diwali",
@@ -2601,9 +3246,7 @@
   "model": "core.userhistory",
   "pk": 36,
   "fields": {
-    "user": [
-      "Rajashekar"
-    ],
+    "user": 13,
     "action_type": "text_generation",
     "input_data": {
       "user_input": "",
@@ -2619,9 +3262,7 @@
   "model": "core.userhistory",
   "pk": 37,
   "fields": {
-    "user": [
-      "admin"
-    ],
+    "user": 4,
     "action_type": "poster_generation",
     "input_data": {
       "promotion_name": "deepwali",
@@ -2641,9 +3282,7 @@
   "model": "core.userhistory",
   "pk": 38,
   "fields": {
-    "user": [
-      "Rajashekar"
-    ],
+    "user": 13,
     "action_type": "poster_generation",
     "input_data": {
       "promotion_name": "Create a vibrant marketing poster for a traditional pottery artisan. Include the artisan’s name: ‘Rajashekar Pottery’, highlight the offer: ‘20% off on Handmade Clay Pots’, add a tagline: ‘From Clay to Culture – Bring Tradition Home’. Use warm earthy colors (terracotta, beige, brown), showcase hand-crafted pots and a cultural motif background. Keep it Instagram-ready with bold fonts and eye-catching visuals.",
@@ -2663,9 +3302,7 @@
   "model": "core.userhistory",
   "pk": 39,
   "fields": {
-    "user": [
-      "Rajashekar"
-    ],
+    "user": 13,
     "action_type": "poster_generation",
     "input_data": {
       "promotion_name": "Create a vibrant marketing poster for a traditional pottery artisan. Include the artisan’s name: ‘Rajashekar Pottery’, highlight the offer: ‘20% off on Handmade Clay Pots’, add a tagline: ‘From Clay to Culture – Bring Tradition Home’. Use warm earthy colors (terracotta, beige, brown), showcase hand-crafted pots and a cultural motif background. Keep it Instagram-ready with bold fonts and eye-catching visuals.",
@@ -2685,9 +3322,7 @@
   "model": "core.userhistory",
   "pk": 40,
   "fields": {
-    "user": [
-      "Rajashekar"
-    ],
+    "user": 13,
     "action_type": "poster_generation",
     "input_data": {
       "promotion_name": "Create a vibrant marketing poster for a traditional pottery artisan. Include the artisan’s name: ‘Rajashekar Pottery’, highlight the offer: ‘20% off on Handmade Clay Pots’, add a tagline: ‘From Clay to Culture – Bring Tradition Home’. Use warm earthy colors (terracotta, beige, brown), showcase hand-crafted pots and a cultural motif background. Keep it Instagram-ready with bold fonts and eye-catching visuals.",
@@ -2707,9 +3342,7 @@
   "model": "core.userhistory",
   "pk": 41,
   "fields": {
-    "user": [
-      "user2"
-    ],
+    "user": 7,
     "action_type": "poster_generation",
     "input_data": {
       "promotion_name": "raksha bandhan",
@@ -2729,9 +3362,7 @@
   "model": "core.userhistory",
   "pk": 42,
   "fields": {
-    "user": [
-      "user2"
-    ],
+    "user": 7,
     "action_type": "poster_generation",
     "input_data": {
       "promotion_name": "romance",
@@ -2751,9 +3382,7 @@
   "model": "core.userhistory",
   "pk": 43,
   "fields": {
-    "user": [
-      "user3"
-    ],
+    "user": 14,
     "action_type": "poster_generation",
     "input_data": {
       "promotion_name": "A close-up, top-down shot of a vibrant platter showcasing a freshly fried assortment of 'talikoti baji shop' snacks: golden-brown Mirchi Baji, perfectly crispy Batati Baji, and soft, flavorful Badanekai Baji. Each piece should have visible, appealing textures – the slight crisp of the batter, the soft inside. Accompanying them is a small bowl of colorful, appetizing Girmit, perhaps with a sprinkle of fresh coriander. The lighting should be warm and inviting, highlighting the steam subtly rising from the hot snacks. The background should be slightly blurred to keep the focus on the food, perhaps a rustic, clean tabletop. The overall feel should be incredibly tempting, making viewers crave these 'very testy and mouth watery' snacks instantly. High-resolution, food photography style.",
@@ -2773,9 +3402,7 @@
   "model": "core.userhistory",
   "pk": 44,
   "fields": {
-    "user": [
-      "user3"
-    ],
+    "user": 14,
     "action_type": "poster_generation",
     "input_data": {
       "promotion_name": "deepawali",
@@ -2795,9 +3422,7 @@
   "model": "core.userhistory",
   "pk": 45,
   "fields": {
-    "user": [
-      "user3"
-    ],
+    "user": 14,
     "action_type": "text_generation",
     "input_data": {
       "user_input": "",
@@ -2813,9 +3438,7 @@
   "model": "core.userhistory",
   "pk": 46,
   "fields": {
-    "user": [
-      "user3"
-    ],
+    "user": 14,
     "action_type": "poster_generation",
     "input_data": {
       "promotion_name": "free food",
@@ -2835,9 +3458,7 @@
   "model": "core.userhistory",
   "pk": 47,
   "fields": {
-    "user": [
-      "user3"
-    ],
+    "user": 14,
     "action_type": "poster_generation",
     "input_data": {
       "promotion_name": "Anniversay Sale",
@@ -2857,9 +3478,7 @@
   "model": "core.userhistory",
   "pk": 48,
   "fields": {
-    "user": [
-      "user3"
-    ],
+    "user": 14,
     "action_type": "poster_generation",
     "input_data": {
       "promotion_name": "Anniversary Sale",
@@ -2879,9 +3498,7 @@
   "model": "core.userhistory",
   "pk": 49,
   "fields": {
-    "user": [
-      "user3"
-    ],
+    "user": 14,
     "action_type": "poster_generation",
     "input_data": {
       "promotion_name": "Anniversary Sale",
@@ -2901,9 +3518,7 @@
   "model": "core.userhistory",
   "pk": 50,
   "fields": {
-    "user": [
-      "Rajashekar"
-    ],
+    "user": 13,
     "action_type": "text_generation",
     "input_data": {
       "user_input": "",
@@ -2919,9 +3534,7 @@
   "model": "core.userhistory",
   "pk": 51,
   "fields": {
-    "user": [
-      "Rajashekar"
-    ],
+    "user": 13,
     "action_type": "text_generation",
     "input_data": {
       "user_input": "",
@@ -2937,9 +3550,7 @@
   "model": "core.userhistory",
   "pk": 52,
   "fields": {
-    "user": [
-      "Rajashekar"
-    ],
+    "user": 13,
     "action_type": "text_generation",
     "input_data": {
       "user_input": "",
@@ -2955,9 +3566,7 @@
   "model": "core.userhistory",
   "pk": 53,
   "fields": {
-    "user": [
-      "Rajashekar"
-    ],
+    "user": 13,
     "action_type": "poster_generation",
     "input_data": {
       "promotion_name": "deepawali",
@@ -2977,9 +3586,7 @@
   "model": "core.userhistory",
   "pk": 54,
   "fields": {
-    "user": [
-      "user1"
-    ],
+    "user": 5,
     "action_type": "poster_generation",
     "input_data": {
       "promotion_name": "ganapati festival",
@@ -2999,9 +3606,7 @@
   "model": "core.userhistory",
   "pk": 55,
   "fields": {
-    "user": [
-      "Rajashekar"
-    ],
+    "user": 13,
     "action_type": "poster_generation",
     "input_data": {
       "promotion_name": "New Year, New Sparkle Sale!",
@@ -3021,9 +3626,7 @@
   "model": "core.userhistory",
   "pk": 56,
   "fields": {
-    "user": [
-      "Rajashekar"
-    ],
+    "user": 13,
     "action_type": "poster_generation",
     "input_data": {
       "promotion_name": "New Year, New Sparkle Sale!",
@@ -3043,9 +3646,7 @@
   "model": "core.userhistory",
   "pk": 57,
   "fields": {
-    "user": [
-      "Rajashekar"
-    ],
+    "user": 13,
     "action_type": "poster_generation",
     "input_data": {
       "promotion_name": "New Year, New Sparkle Sale!",
@@ -3065,9 +3666,7 @@
   "model": "core.userhistory",
   "pk": 58,
   "fields": {
-    "user": [
-      "Rajashekar"
-    ],
+    "user": 13,
     "action_type": "poster_generation",
     "input_data": {
       "promotion_name": "New year, New sparkle sale!",
@@ -3087,9 +3686,7 @@
   "model": "core.userhistory",
   "pk": 59,
   "fields": {
-    "user": [
-      "user2"
-    ],
+    "user": 7,
     "action_type": "poster_generation",
     "input_data": {
       "promotion_name": "Vibrant tech gadgets",
@@ -3109,9 +3706,7 @@
   "model": "core.userhistory",
   "pk": 60,
   "fields": {
-    "user": [
-      "prema"
-    ],
+    "user": 15,
     "action_type": "text_generation",
     "input_data": {
       "user_input": "",
@@ -3127,9 +3722,7 @@
   "model": "core.userhistory",
   "pk": 61,
   "fields": {
-    "user": [
-      "prema"
-    ],
+    "user": 15,
     "action_type": "poster_generation",
     "input_data": {
       "promotion_name": "Party Perfect Makeover",
@@ -3149,9 +3742,7 @@
   "model": "core.userhistory",
   "pk": 62,
   "fields": {
-    "user": [
-      "prema"
-    ],
+    "user": 15,
     "action_type": "poster_generation",
     "input_data": {
       "promotion_name": "Party Perfect Makeover",
@@ -3171,9 +3762,7 @@
   "model": "core.userhistory",
   "pk": 63,
   "fields": {
-    "user": [
-      "prema"
-    ],
+    "user": 15,
     "action_type": "poster_generation",
     "input_data": {
       "promotion_name": "Party Perfect Makeover",
@@ -3193,9 +3782,7 @@
   "model": "core.userhistory",
   "pk": 64,
   "fields": {
-    "user": [
-      "Rajashekar"
-    ],
+    "user": 13,
     "action_type": "poster_generation",
     "input_data": {
       "promotion_name": "Ganapati festival",
@@ -3215,9 +3802,7 @@
   "model": "core.userhistory",
   "pk": 65,
   "fields": {
-    "user": [
-      "Rajashekar"
-    ],
+    "user": 13,
     "action_type": "poster_generation",
     "input_data": {
       "promotion_name": "Ganapati sale",
@@ -3237,9 +3822,7 @@
   "model": "core.userhistory",
   "pk": 66,
   "fields": {
-    "user": [
-      "prema"
-    ],
+    "user": 15,
     "action_type": "poster_generation",
     "input_data": {
       "promotion_name": "Ganapati statues sale",
@@ -3259,9 +3842,7 @@
   "model": "core.userhistory",
   "pk": 67,
   "fields": {
-    "user": [
-      "prema"
-    ],
+    "user": 15,
     "action_type": "poster_generation",
     "input_data": {
       "promotion_name": "Ganapati statues sale",
@@ -3281,9 +3862,7 @@
   "model": "core.userhistory",
   "pk": 68,
   "fields": {
-    "user": [
-      "prema"
-    ],
+    "user": 15,
     "action_type": "poster_generation",
     "input_data": {
       "promotion_name": "Deepawali",
@@ -3303,9 +3882,7 @@
   "model": "core.userhistory",
   "pk": 69,
   "fields": {
-    "user": [
-      "prema"
-    ],
+    "user": 15,
     "action_type": "poster_generation",
     "input_data": {
       "promotion_name": "Deepwali",
@@ -3325,9 +3902,7 @@
   "model": "core.userhistory",
   "pk": 70,
   "fields": {
-    "user": [
-      "prema"
-    ],
+    "user": 15,
     "action_type": "poster_generation",
     "input_data": {
       "promotion_name": "Deepawali",
@@ -3347,9 +3922,7 @@
   "model": "core.userhistory",
   "pk": 71,
   "fields": {
-    "user": [
-      "Rajashekar"
-    ],
+    "user": 13,
     "action_type": "poster_generation",
     "input_data": {
       "promotion_name": "Deepwali",
@@ -3369,9 +3942,7 @@
   "model": "core.userhistory",
   "pk": 72,
   "fields": {
-    "user": [
-      "Rajashekar"
-    ],
+    "user": 13,
     "action_type": "poster_generation",
     "input_data": {
       "promotion_name": "Deepawali",
@@ -3391,9 +3962,7 @@
   "model": "core.userhistory",
   "pk": 73,
   "fields": {
-    "user": [
-      "prema"
-    ],
+    "user": 15,
     "action_type": "poster_generation",
     "input_data": {
       "promotion_name": "Dasara & Deepawali Grooming Offer",
@@ -3413,9 +3982,7 @@
   "model": "core.userhistory",
   "pk": 74,
   "fields": {
-    "user": [
-      "prema"
-    ],
+    "user": 15,
     "action_type": "poster_generation",
     "input_data": {
       "promotion_name": "Dasara & Deepawali Grooming Offer",
@@ -3435,9 +4002,7 @@
   "model": "core.userhistory",
   "pk": 75,
   "fields": {
-    "user": [
-      "prema"
-    ],
+    "user": 15,
     "action_type": "poster_generation",
     "input_data": {
       "promotion_name": "Dasara & Deepawali Offer",
@@ -3457,9 +4022,7 @@
   "model": "core.userhistory",
   "pk": 76,
   "fields": {
-    "user": [
-      "prema"
-    ],
+    "user": 15,
     "action_type": "poster_generation",
     "input_data": {
       "promotion_name": "Dasara & Deepawali Grooming Offer",
@@ -3479,9 +4042,7 @@
   "model": "core.userhistory",
   "pk": 77,
   "fields": {
-    "user": [
-      "prema"
-    ],
+    "user": 15,
     "action_type": "poster_generation",
     "input_data": {
       "promotion_name": "Deepawali",
@@ -3501,9 +4062,7 @@
   "model": "core.userhistory",
   "pk": 78,
   "fields": {
-    "user": [
-      "Rajashekar"
-    ],
+    "user": 13,
     "action_type": "poster_generation",
     "input_data": {
       "promotion_name": "Deepawali",
@@ -3523,9 +4082,7 @@
   "model": "core.userhistory",
   "pk": 79,
   "fields": {
-    "user": [
-      "Rajashekar"
-    ],
+    "user": 13,
     "action_type": "poster_generation",
     "input_data": {
       "promotion_name": "Deepawali",
@@ -3545,9 +4102,7 @@
   "model": "core.userhistory",
   "pk": 80,
   "fields": {
-    "user": [
-      "Rajashekar"
-    ],
+    "user": 13,
     "action_type": "poster_generation",
     "input_data": {
       "promotion_name": "Deepawali",
@@ -3567,9 +4122,7 @@
   "model": "core.userhistory",
   "pk": 81,
   "fields": {
-    "user": [
-      "abhishek"
-    ],
+    "user": 2,
     "action_type": "poster_generation",
     "input_data": {
       "promotion_name": "Deepawali",
@@ -3589,9 +4142,7 @@
   "model": "core.userhistory",
   "pk": 82,
   "fields": {
-    "user": [
-      "a"
-    ],
+    "user": 16,
     "action_type": "poster_generation",
     "input_data": {
       "promotion_name": "Deepawali",
@@ -3611,9 +4162,7 @@
   "model": "core.userhistory",
   "pk": 83,
   "fields": {
-    "user": [
-      "user2"
-    ],
+    "user": 7,
     "action_type": "poster_generation",
     "input_data": {
       "promotion_name": "Deepawali",
@@ -3633,9 +4182,7 @@
   "model": "core.userhistory",
   "pk": 84,
   "fields": {
-    "user": [
-      "userd"
-    ],
+    "user": 6,
     "action_type": "poster_generation",
     "input_data": {
       "promotion_name": "What_Ma....!",
@@ -3655,9 +4202,7 @@
   "model": "core.userhistory",
   "pk": 85,
   "fields": {
-    "user": [
-      "userd"
-    ],
+    "user": 6,
     "action_type": "poster_generation",
     "input_data": {
       "promotion_name": "What_Ma.....!!!",
@@ -3677,9 +4222,7 @@
   "model": "core.userhistory",
   "pk": 86,
   "fields": {
-    "user": [
-      "feet.jpg"
-    ],
+    "user": 17,
     "action_type": "poster_generation",
     "input_data": {
       "promotion_name": "What_Ma.....!!!",
@@ -3699,9 +4242,7 @@
   "model": "core.userhistory",
   "pk": 87,
   "fields": {
-    "user": [
-      "admin"
-    ],
+    "user": 4,
     "action_type": "poster_generation",
     "input_data": {
       "promotion_name": "new year",
@@ -3721,9 +4262,7 @@
   "model": "core.userhistory",
   "pk": 88,
   "fields": {
-    "user": [
-      "admin"
-    ],
+    "user": 4,
     "action_type": "poster_generation",
     "input_data": {
       "promotion_name": "deepawali",
@@ -3743,9 +4282,7 @@
   "model": "core.userhistory",
   "pk": 89,
   "fields": {
-    "user": [
-      "admin"
-    ],
+    "user": 4,
     "action_type": "poster_generation",
     "input_data": {
       "promotion_name": "Yugadi",
@@ -3765,9 +4302,7 @@
   "model": "core.userhistory",
   "pk": 90,
   "fields": {
-    "user": [
-      "finall"
-    ],
+    "user": 12,
     "action_type": "poster_generation",
     "input_data": {
       "promotion_name": "Yugadi",
@@ -3784,12 +4319,110 @@
   }
 },
 {
+  "model": "core.userhistory",
+  "pk": 91,
+  "fields": {
+    "user": 18,
+    "action_type": "poster_generation",
+    "input_data": {
+      "promotion_name": "New Year",
+      "offer_type": "Buy Two Get One Free",
+      "language": "English",
+      "business_name": "Omlette OMG",
+      "location": "Plot 42C, Sector 8, Navanagar, Bagalkot, Karnataka, India",
+      "phone": "6362905961",
+      "timing": "08:00 AM - 10:00 PM"
+    },
+    "output_data": "https://res.cloudinary.com/dgqm61eqb/image/upload/v1769376067/posters/poster_cmy_acb1973a.png",
+    "prompt_used": "\n            You are a creative director. Include emotional, atmospheric, and cultural details relevant to the promotion theme (e.g., festivals, seasons , etc). Keep the business details exact, but describe the visuals vividly.\n so , Create a professional and eye-catching marketing poster for the business \"Omlette OMG\" to boost customer engagement and promote its latest offer.\n\nBUSINESS INFO:\n- Business Name: Omlette OMG\n- Business Type: Omlette OMG offers freshly prepared omelettes and quick meals, focused on quality ingredients, great taste, and fast service\n- Location: Plot 42C, Sector 8, Navanagar, Bagalkot, Karnataka, India\n- Phone: 6362905961\n- Timing: 08:00 AM - 10:00 PM\n\nPROMOTION:\n- Promotion Name: New Year\n- Main Offer: Buy Two Get One Free\n- Language: English\n\nDESIGN GUIDELINES:\n- Format optimized for Instagram and WhatsApp sharing\n- Display the business name clearly at the top\n- Highlight the promotion name and main offer with bold and attractive fonts\n- Use colors and typography that match the business theme\n- Include relevant visuals or illustrations:\n  - If Omlette OMG offers freshly prepared omelettes and quick meals, focused on quality ingredients, great taste, and fast service is \"salon\" or \"beauty parlour\", \n  include an elegant image of a woman in format (Make sure the woman is fully clothed in a traditional or professional outfit, modest and elegant, suitable for a beauty parlour advertisement. Avoid sexualized or revealing imagery.) based on the culture of the business name to show beauty services\n  - Otherwise, avoid human faces and use visuals/icons that match the business type (e.g., tools, tech, food)\n- Keep the layout clean and easy to read on mobile\n- Add marketing elements like badges, stickers, or call-to-action text (e.g., \"Call Now\", \"Limited Offer\", \"Visit Today\")\n- Ensure the design remains professional, family-friendly, and suitable for public social media marketing.\n\nPOSTER GOAL:\n- Should look modern, polished, and shareable\n- Designed to attract attention and drive real engagement on social media\n",
+    "created_at": "2026-01-25T21:21:09.061Z"
+  }
+},
+{
+  "model": "core.userhistory",
+  "pk": 92,
+  "fields": {
+    "user": 18,
+    "action_type": "poster_generation",
+    "input_data": {
+      "promotion_name": "Fresh Start Feast",
+      "offer_type": "Buy Two Get One Free",
+      "language": "English",
+      "business_name": "Omlette OMG",
+      "location": "Plot 42C, Sector 8, Navanagar, Bagalkot, Karnataka, India",
+      "phone": "6362905961",
+      "timing": "08:00 AM - 10:00 PM"
+    },
+    "output_data": "https://res.cloudinary.com/dgqm61eqb/image/upload/v1769379025/posters/poster_cmy_4acdbda0.png",
+    "prompt_used": "\n            You are a creative director. Include emotional, atmospheric, and cultural details relevant to the promotion theme (e.g., festivals, seasons , etc). Keep the business details exact, but describe the visuals vividly.\n so , Create a professional and eye-catching marketing poster for the business \"Omlette OMG\" to boost customer engagement and promote its latest offer.\n\nBUSINESS INFO:\n- Business Name: Omlette OMG\n- Business Type: Omlette OMG offers freshly prepared omelettes and quick meals, focused on quality ingredients, great taste, and fast service\n- Location: Plot 42C, Sector 8, Navanagar, Bagalkot, Karnataka, India\n- Phone: 6362905961\n- Timing: 08:00 AM - 10:00 PM\n\nPROMOTION:\n- Promotion Name: Fresh Start Feast\n- Main Offer: Buy Two Get One Free\n- Language: English\n\nDESIGN GUIDELINES:\n- Format optimized for Instagram and WhatsApp sharing\n- Display the business name clearly at the top\n- Highlight the promotion name and main offer with bold and attractive fonts\n- Use colors and typography that match the business theme\n- Include relevant visuals or illustrations:\n  - If Omlette OMG offers freshly prepared omelettes and quick meals, focused on quality ingredients, great taste, and fast service is \"salon\" or \"beauty parlour\", \n  include an elegant image of a woman in format (Make sure the woman is fully clothed in a traditional or professional outfit, modest and elegant, suitable for a beauty parlour advertisement. Avoid sexualized or revealing imagery.) based on the culture of the business name to show beauty services\n  - Otherwise, avoid human faces and use visuals/icons that match the business type (e.g., tools, tech, food)\n- Keep the layout clean and easy to read on mobile\n- Add marketing elements like badges, stickers, or call-to-action text (e.g., \"Call Now\", \"Limited Offer\", \"Visit Today\")\n- Ensure the design remains professional, family-friendly, and suitable for public social media marketing.\n\nPOSTER GOAL:\n- Should look modern, polished, and shareable\n- Designed to attract attention and drive real engagement on social media\n",
+    "created_at": "2026-01-25T22:10:27.363Z"
+  }
+},
+{
+  "model": "core.userhistory",
+  "pk": 93,
+  "fields": {
+    "user": 18,
+    "action_type": "poster_generation",
+    "input_data": {
+      "promotion_name": "Craze for Omelettes",
+      "offer_type": "Buy Two Get One Free",
+      "language": "English",
+      "business_name": "Omlette OMG",
+      "location": "Plot 42C, Sector 8, Navanagar, Bagalkot, Karnataka, India",
+      "phone": "6362905961",
+      "timing": "08:00 AM - 10:00 PM"
+    },
+    "output_data": "https://res.cloudinary.com/dgqm61eqb/image/upload/v1769379683/posters/poster_cmy_59e66da6.png",
+    "prompt_used": "\n            You are a creative director. Include emotional, atmospheric, and cultural details relevant to the promotion theme (e.g., festivals, seasons , etc). Keep the business details exact, but describe the visuals vividly.\n so , Create a professional and eye-catching marketing poster for the business \"Omlette OMG\" to boost customer engagement and promote its latest offer.\n\nBUSINESS INFO:\n- Business Name: Omlette OMG\n- Business Type: Omlette OMG offers freshly prepared omelettes and quick meals, focused on quality ingredients, great taste, and fast service\n- Location: Plot 42C, Sector 8, Navanagar, Bagalkot, Karnataka, India\n- Phone: 6362905961\n- Timing: 08:00 AM - 10:00 PM\n\nPROMOTION:\n- Promotion Name: Craze for Omelettes\n- Main Offer: Buy Two Get One Free\n- Language: English\n\nDESIGN GUIDELINES:\n- Format optimized for Instagram and WhatsApp sharing\n- Display the business name clearly at the top\n- Highlight the promotion name and main offer with bold and attractive fonts\n- Use colors and typography that match the business theme\n- Include relevant visuals or illustrations:\n  - If Omlette OMG offers freshly prepared omelettes and quick meals, focused on quality ingredients, great taste, and fast service is \"salon\" or \"beauty parlour\", \n  include an elegant image of a woman in format (Make sure the woman is fully clothed in a traditional or professional outfit, modest and elegant, suitable for a beauty parlour advertisement. Avoid sexualized or revealing imagery.) based on the culture of the business name to show beauty services\n  - Otherwise, avoid human faces and use visuals/icons that match the business type (e.g., tools, tech, food)\n- Keep the layout clean and easy to read on mobile\n- Add marketing elements like badges, stickers, or call-to-action text (e.g., \"Call Now\", \"Limited Offer\", \"Visit Today\")\n- Ensure the design remains professional, family-friendly, and suitable for public social media marketing.\n\nPOSTER GOAL:\n- Should look modern, polished, and shareable\n- Designed to attract attention and drive real engagement on social media\n",
+    "created_at": "2026-01-25T22:21:25.391Z"
+  }
+},
+{
+  "model": "core.userhistory",
+  "pk": 94,
+  "fields": {
+    "user": 13,
+    "action_type": "poster_generation",
+    "input_data": {
+      "promotion_name": "Yugadi",
+      "offer_type": "Flat ₹300 OFF",
+      "language": "English",
+      "business_name": "Rajshekhar crafts",
+      "location": "Your Location",
+      "phone": "123456789",
+      "timing": "9:00 AM - 8:00 PM"
+    },
+    "output_data": "https://res.cloudinary.com/dgqm61eqb/image/upload/v1769379899/posters/poster_Rajashekar_42e12062.png",
+    "prompt_used": "\n            You are a creative director. Include emotional, atmospheric, and cultural details relevant to the promotion theme (e.g., festivals, seasons , etc). Keep the business details exact, but describe the visuals vividly.\n so , Create a professional and eye-catching marketing poster for the business \"Rajshekhar crafts\" to boost customer engagement and promote its latest offer.\n\nBUSINESS INFO:\n- Business Name: Rajshekhar crafts\n- Business Type: Rajashekar Pottery is a family-run artisan workshop dedicated to preserving the timeless craft of traditional Indian pottery\n- Location: Your Location\n- Phone: 123456789\n- Timing: 9:00 AM - 8:00 PM\n\nPROMOTION:\n- Promotion Name: Yugadi\n- Main Offer: Flat ₹300 OFF\n- Language: English\n\nDESIGN GUIDELINES:\n- Format optimized for Instagram and WhatsApp sharing\n- Display the business name clearly at the top\n- Highlight the promotion name and main offer with bold and attractive fonts\n- Use colors and typography that match the business theme\n- Include relevant visuals or illustrations:\n  - If Rajashekar Pottery is a family-run artisan workshop dedicated to preserving the timeless craft of traditional Indian pottery is \"salon\" or \"beauty parlour\", \n  include an elegant image of a woman in format (Make sure the woman is fully clothed in a traditional or professional outfit, modest and elegant, suitable for a beauty parlour advertisement. Avoid sexualized or revealing imagery.) based on the culture of the business name to show beauty services\n  - Otherwise, avoid human faces and use visuals/icons that match the business type (e.g., tools, tech, food)\n- Keep the layout clean and easy to read on mobile\n- Add marketing elements like badges, stickers, or call-to-action text (e.g., \"Call Now\", \"Limited Offer\", \"Visit Today\")\n- Ensure the design remains professional, family-friendly, and suitable for public social media marketing.\n\nPOSTER GOAL:\n- Should look modern, polished, and shareable\n- Designed to attract attention and drive real engagement on social media\n",
+    "created_at": "2026-01-25T22:25:01.840Z"
+  }
+},
+{
+  "model": "core.userhistory",
+  "pk": 95,
+  "fields": {
+    "user": 13,
+    "action_type": "poster_generation",
+    "input_data": {
+      "promotion_name": "Yugadi",
+      "offer_type": "Flat ₹300 OFF",
+      "language": "English",
+      "business_name": "Rajshekhar crafts",
+      "location": "Your Location",
+      "phone": "123456789",
+      "timing": "9:00 AM - 8:00 PM"
+    },
+    "output_data": "https://res.cloudinary.com/dgqm61eqb/image/upload/v1769380013/posters/poster_Rajashekar_2863bc31.png",
+    "prompt_used": "\n            You are a creative director. Include emotional, atmospheric, and cultural details relevant to the promotion theme (e.g., festivals, seasons , etc). Keep the business details exact, but describe the visuals vividly.\n so , Create a professional and eye-catching marketing poster for the business \"Rajshekhar crafts\" to boost customer engagement and promote its latest offer.\n\nBUSINESS INFO:\n- Business Name: Rajshekhar crafts\n- Business Type: Rajashekar Pottery is a family-run artisan workshop dedicated to preserving the timeless craft of traditional Indian pottery\n- Location: Your Location\n- Phone: 123456789\n- Timing: 9:00 AM - 8:00 PM\n\nPROMOTION:\n- Promotion Name: Yugadi\n- Main Offer: Flat ₹300 OFF\n- Language: English\n\nDESIGN GUIDELINES:\n- Format optimized for Instagram and WhatsApp sharing\n- Display the business name clearly at the top\n- Highlight the promotion name and main offer with bold and attractive fonts\n- Use colors and typography that match the business theme\n- Include relevant visuals or illustrations:\n  - If Rajashekar Pottery is a family-run artisan workshop dedicated to preserving the timeless craft of traditional Indian pottery is \"salon\" or \"beauty parlour\", \n  include an elegant image of a woman in format (Make sure the woman is fully clothed in a traditional or professional outfit, modest and elegant, suitable for a beauty parlour advertisement. Avoid sexualized or revealing imagery.) based on the culture of the business name to show beauty services\n  - Otherwise, avoid human faces and use visuals/icons that match the business type (e.g., tools, tech, food)\n- Keep the layout clean and easy to read on mobile\n- Add marketing elements like badges, stickers, or call-to-action text (e.g., \"Call Now\", \"Limited Offer\", \"Visit Today\")\n- Ensure the design remains professional, family-friendly, and suitable for public social media marketing.\n\nPOSTER GOAL:\n- Should look modern, polished, and shareable\n- Designed to attract attention and drive real engagement on social media\n",
+    "created_at": "2026-01-25T22:26:55.163Z"
+  }
+},
+{
   "model": "core.twofactorauth",
   "pk": 1,
   "fields": {
-    "user": [
-      "admin"
-    ],
+    "user": 4,
     "secret": "CEOFZZC27ZUM3ZG4RLT6QHMKLBWVUT5S",
     "enabled": true,
     "created_at": "2025-10-09T20:45:47.693Z",
@@ -3800,9 +4433,7 @@
   "model": "core.twofactorauth",
   "pk": 2,
   "fields": {
-    "user": [
-      "Rajashekar"
-    ],
+    "user": 13,
     "secret": "MPL3FOTFYZ3K53T56UPVNAE6GGSHFQ7I",
     "enabled": true,
     "created_at": "2025-10-09T20:49:43.696Z",
@@ -3813,9 +4444,7 @@
   "model": "core.twofactorauth",
   "pk": 3,
   "fields": {
-    "user": [
-      "vpriya"
-    ],
+    "user": 11,
     "secret": "KYTN2IA2DWXW3USPVSJG7RAWYKB42WNT",
     "enabled": false,
     "created_at": "2025-10-09T21:03:29.307Z",
@@ -3826,9 +4455,7 @@
   "model": "core.twofactorauth",
   "pk": 4,
   "fields": {
-    "user": [
-      "userd"
-    ],
+    "user": 6,
     "secret": "P4TZFLYJ25K3L6UPEEYSFP52IL64C3FL",
     "enabled": true,
     "created_at": "2025-10-09T21:04:52.900Z",
@@ -3839,9 +4466,7 @@
   "model": "core.twofactorauth",
   "pk": 5,
   "fields": {
-    "user": [
-      "abhishek"
-    ],
+    "user": 2,
     "secret": "ACOW4JR4VJOGBG2BWIDZ2PO7MRDZWGNV",
     "enabled": true,
     "created_at": "2025-10-09T21:11:49.553Z",
@@ -3852,9 +4477,7 @@
   "model": "core.twofactorauth",
   "pk": 6,
   "fields": {
-    "user": [
-      "a"
-    ],
+    "user": 16,
     "secret": "7EQSEQM3KHUP6QNICQTL4DYIX3APOJLA",
     "enabled": true,
     "created_at": "2025-10-09T21:34:08.336Z",
@@ -3865,9 +4488,7 @@
   "model": "core.twofactorauth",
   "pk": 7,
   "fields": {
-    "user": [
-      "user3"
-    ],
+    "user": 14,
     "secret": "D55FHN7MQYAN3JTCHV7XDNDQNNX6PXXL",
     "enabled": false,
     "created_at": "2025-10-10T07:23:36.236Z",
@@ -3878,9 +4499,7 @@
   "model": "core.twofactorauth",
   "pk": 8,
   "fields": {
-    "user": [
-      "user2"
-    ],
+    "user": 7,
     "secret": "HPZ6SHWWQAC2J3YYJNTXB3TMLH2H4NUM",
     "enabled": true,
     "created_at": "2025-10-10T17:26:48.629Z",
@@ -3891,9 +4510,7 @@
   "model": "core.twofactorauth",
   "pk": 9,
   "fields": {
-    "user": [
-      "prema"
-    ],
+    "user": 15,
     "secret": "ZSFU2L4O7PWLZ246FX5RXKU5R62RL2ZN",
     "enabled": false,
     "created_at": "2025-10-14T10:42:51.060Z",
@@ -3904,103 +4521,11 @@
   "model": "core.twofactorauth",
   "pk": 10,
   "fields": {
-    "user": [
-      "feet.jpg"
-    ],
+    "user": 17,
     "secret": "QGQSTTUZF4YDDCEVLRG7BP3CB4SGP6J5",
     "enabled": true,
     "created_at": "2025-10-14T10:54:34.665Z",
     "last_verified_at": "2025-10-14T10:54:52.245Z"
-  }
-},
-{
-  "model": "admin.logentry",
-  "pk": 1,
-  "fields": {
-    "action_time": "2025-08-10T13:21:06.594Z",
-    "user": [
-      "admin"
-    ],
-    "content_type": [
-      "core",
-      "customuser"
-    ],
-    "object_id": "3",
-    "object_repr": "niranjan",
-    "action_flag": 3,
-    "change_message": ""
-  }
-},
-{
-  "model": "admin.logentry",
-  "pk": 2,
-  "fields": {
-    "action_time": "2025-08-10T19:03:52.911Z",
-    "user": [
-      "admin"
-    ],
-    "content_type": [
-      "core",
-      "customuser"
-    ],
-    "object_id": "12",
-    "object_repr": "finall",
-    "action_flag": 2,
-    "change_message": "[{\"changed\": {\"fields\": [\"Username\"]}}]"
-  }
-},
-{
-  "model": "admin.logentry",
-  "pk": 3,
-  "fields": {
-    "action_time": "2025-10-09T20:52:16.111Z",
-    "user": [
-      "admin"
-    ],
-    "content_type": [
-      "core",
-      "customuser"
-    ],
-    "object_id": "13",
-    "object_repr": "Rajashekar",
-    "action_flag": 2,
-    "change_message": "[{\"changed\": {\"fields\": [\"Email address\"]}}]"
-  }
-},
-{
-  "model": "admin.logentry",
-  "pk": 4,
-  "fields": {
-    "action_time": "2025-10-09T20:52:26.117Z",
-    "user": [
-      "admin"
-    ],
-    "content_type": [
-      "core",
-      "customuser"
-    ],
-    "object_id": "13",
-    "object_repr": "Rajashekar",
-    "action_flag": 2,
-    "change_message": "[]"
-  }
-},
-{
-  "model": "admin.logentry",
-  "pk": 5,
-  "fields": {
-    "action_time": "2025-10-09T21:13:10.820Z",
-    "user": [
-      "admin"
-    ],
-    "content_type": [
-      "core",
-      "customuser"
-    ],
-    "object_id": "2",
-    "object_repr": "abhishek",
-    "action_flag": 2,
-    "change_message": "[{\"changed\": {\"fields\": [\"Email address\"]}}]"
   }
 }
 ]

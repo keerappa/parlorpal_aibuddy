@@ -48,3 +48,7 @@ dist/
 *.egg-info/
 *.egg
 wheels/
+
+fixtures/
+testing/
+All_users_parlorpal.txt
