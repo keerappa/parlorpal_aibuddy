@@ -685,8 +685,8 @@ def poster_generator_view(request):
                 timing = "9:00 AM - 8:00 PM"
             
             prompt_text = f"""
-            You are a creative director. Include emotional, atmospheric, and cultural details relevant to the promotion theme (e.g., festivals, seasons , etc). Keep the business details exact, but describe the visuals vividly.
- so , Create a professional and eye-catching marketing poster for the business "{business_name}" to boost customer engagement and promote its latest offer.
+You are a creative director. Include emotional, atmospheric, and cultural details relevant to the promotion theme (e.g., festivals, seasons, etc). Keep the business details exact, but describe the visuals vividly.
+Create a professional and eye-catching marketing poster for the business "{business_name}" to boost customer engagement and promote its latest offer.
 
 BUSINESS INFO:
 - Business Name: {business_name}
@@ -703,12 +703,14 @@ PROMOTION:
 DESIGN GUIDELINES:
 - Format optimized for Instagram and WhatsApp sharing
 - Display the business name clearly at the top
+- **MANDATORY: Include 2-3 keywords or service names related to {business_type} (e.g., "Hair • Makeup • Spa" or "Bridal Services • Facials • Styling") prominently on the poster**
 - Highlight the promotion name and main offer with bold and attractive fonts
 - Use colors and typography that match the business theme
-- Include relevant visuals or illustrations:
-  - If {business_type} is "salon" or "beauty parlour", 
-  include an elegant image of a woman in format (Make sure the woman is fully clothed in a traditional or professional outfit, modest and elegant, suitable for a beauty parlour advertisement. Avoid sexualized or revealing imagery.) based on the culture of the business name to show beauty services
-  - Otherwise, avoid human faces and use visuals/icons that match the business type (e.g., tools, tech, food)
+- **CRITICAL: Use ONLY cartoon/animated/illustrated style visuals. DO NOT generate realistic human photographs or images.**
+- Include relevant cartoon/animated visuals or illustrations:
+  - If {business_type} is "salon" or "beauty parlour", use cartoon/animated illustrations of beauty tools, cosmetics, or stylized beauty elements (combs, scissors, lipstick, mirrors, etc.)
+  - Otherwise, use cartoon/animated icons/illustrations that match the business type (e.g., cartoon tools, tech icons, food illustrations)
+  - **Absolutely NO realistic human faces or photographs - only cartoon/animated style**
 - Keep the layout clean and easy to read on mobile
 - Add marketing elements like badges, stickers, or call-to-action text (e.g., "Call Now", "Limited Offer", "Visit Today")
 - Ensure the design remains professional, family-friendly, and suitable for public social media marketing.
@@ -716,6 +718,7 @@ DESIGN GUIDELINES:
 POSTER GOAL:
 - Should look modern, polished, and shareable
 - Designed to attract attention and drive real engagement on social media
+- Must clearly communicate what services the business provides through keywords
 """
 
 
@@ -813,7 +816,7 @@ POSTER GOAL:
                 print(f"DEBUG: Full traceback: {traceback.format_exc()}")
         
         # Redirect after POST to prevent resubmission on refresh
-        return redirect('poster_generator')
+        return redirect('generate_poster')
 
     context = {
         'profile': profile,
